@@ -198,6 +198,10 @@ body {
 .mywork {
     padding: 5%;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
 }
 
@@ -224,7 +228,8 @@ body {
 
 .mywork h1 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
+    color: rgb(67, 119, 91);
     font-family: var(--main-font);
 }
 
@@ -275,24 +280,29 @@ footer a {
 
 @media only screen and (max-width: 700px) {
     .front {
-        margin: 10% auto;
-        width: 80%;
-        height: 70vh;
+        padding: 10%;
+        margin: 0 auto;
     }
     .btn button {
-        padding: 3%;
-        width: 10 0%;
+        font-size: 1rem;
     }
-    .skills h3 {
-        font-size: 1.5rem;
-    }
-    .background {
-        height: 100vh;
-    }
-    .education {
-        border: none;
+    .skilList div {
+        padding: 1rem;
+        margin: 0 auto;
     }
     .container {
+        border: none;
+    }
+    .front,
+    .container,
+    .project {
         flex-direction: column;
+    }
+    .headshot {
+        display: none;
+    }
+    .education {
+        border-top: 2px solid black;
+        border-left: none;
     }
 }

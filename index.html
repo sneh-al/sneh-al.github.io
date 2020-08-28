@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Sen&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-
+    <!-- animation on scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body>
-    <section class="front">
+    <section class="front" data-aos="zoom-out-up" data-aos-duration="2000">
         <div class="headshot">
             <img src="./asset/headshot.jpg" alt="" srcset="">
         </div>
@@ -29,10 +31,12 @@
     </section>
 
     <section class="background" id="about">
-        <h1>About Me</h1>
+        <div class="title" data-aos="zoom-in">
+            <h1>About Me</h1>
+        </div>
         <div class="container">
 
-            <div class="skills">
+            <div class="skills" data-aos="fade-up" data-aos-duration="2000">
                 <p>
                     It all started with Fundamentals of Programming. Over the period of my acadmic, I learned Data Structures, Object Oriented Programming, Database Management Systems, Open Source Softwares & Frameworks and many things. Apart from these, i'm learning Mathematics
                     and Theory of Computation.
@@ -41,46 +45,51 @@
                 <h3>Here are a few technologies and tools I've been learning/working with recently</h3>
 
                 <div class="skilList">
+                    <div class="left">
+                        <div class="tech">
+                            <ul class="keySkills">
 
-                    <div class="tech">
-                        <ul class="keySkills">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                            </ul>
+                        </div>
+                        <div class="db">
+                            <ul class="keySkills">
+                                <li>MySql</li>
+                                <li>Mongodb</li>
+                                <li>MSSql</li>
 
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                        </ul>
+
+                            </ul>
+                        </div>
                     </div>
-                    <div class="db">
-                        <ul class="keySkills">
-                            <li>MySql</li>
-                            <li>Mongodb</li>
-                            <li>MSSql</li>
+                    <div class="right">
+                        <div class="tools">
+                            <ul class="keySkills">
+                                <li>Git/Github</li>
+                                <li>Heroku</li>
+                                <li>firebase</li>
+                                <li>Nodejs</li>
 
-
-                        </ul>
-                    </div>
-                    <div class="tools">
-                        <ul class="keySkills">
-                            <li>Git/Github</li>
-                            <li>Heroku</li>
-                            <li>firebase</li>
-                            <li>Nodejs</li>
-
-                        </ul>
-                    </div>
-                    <div class="design">
-                        <ul class="keySkills">
-                            <li>AdobeXd</li>
-                            <li>Figma</li>
-                        </ul>
+                            </ul>
+                        </div>
+                        <div class="design">
+                            <ul class="keySkills">
+                                <li>AdobeXd</li>
+                                <li>Figma</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
 
             </div>
-            <div class="education">
+            <div class="education" data-aos="fade-down" data-aos-duration="2000">
 
-                <h1>Education</h1>
+                <div class="title" data-aos="zoom-in">
+                    <h1>Education</h1>
+                </div>
 
                 <article>
                     <h3>Bacholre Of Computer Engineering</h3>
@@ -105,7 +114,9 @@
     </section>
 
     <section class="mywork" id="project">
-        <h1>My Work</h1>
+        <div class="title" data-aos="zoom-in">
+            <h1>My Work</h1>
+        </div>
         <div class="work">
             <!-- <div class="project">
                 <div clas s="img">
@@ -117,37 +128,38 @@
                 </div>
             </div> -->
             <div class="project">
-                <div class="img">
+                <div class="img" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="2000">
                     <img src="./asset/corona.JPG">
                 </div>
-                <div class="projectInfo">
+                <div class="projectInfo" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000">
                     <h3><a href="https://codepen.io/sneh13/pen/LYVgWWX">Corona pendamic</a></a>
                     </h3>
                     <p>Corona Pendamic Information page</p>
                 </div>
             </div>
             <div class="project reverse">
-                <div class="img">
+                <div class="img" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="2000">
                     <img src="./asset/br.JPG">
                 </div>
-                <div class="projectInfo">
+                <div class="projectInfo" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000">
                     <h3><a href="https://codepen.io/sneh13/pen/OJVooGp">Tribute Page</a></h3>
                     <p>Tribute Page callange from Freecodecamp.org</p>
                 </div>
             </div>
             <div class="project">
-                <div class="img">
+                <div class="img" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="2000">
                     <img src="./asset/wepro.JPG">
                 </div>
-                <div class="projectInfo">
+                <div class="projectInfo" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000">
                     <h3><a href="https://myindex-dd9a4.firebaseapp.com/">Wepro</a></h3>
                     <p>Landing Page for web Company</p>
                 </div>
             </div>
         </div>
 
-        <p class="morelink">See more project on <a href="https://github.com/Sneh13" target="_blank">Github<sub><i class="fa fa-angle-double-right"></i></a></p>
-
+        <div class="morelink" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="2000">
+            <p>See more project on <a href="https://github.com/Sneh13" target="_blank">Github<sub><i class="fa fa-angle-double-right"></i></a></p>
+        </div>
         </div>
     </section>
 
@@ -161,6 +173,10 @@
             <a href="http://codepen.io/sneh13"><i class="fa fa-codepen"></i></a>
         </div>
     </footer>
+
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
