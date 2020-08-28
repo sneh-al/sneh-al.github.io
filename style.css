@@ -1,0 +1,298 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-font: font-family: 'Roboto', sans-serif;
+    --secondary-font: font-family: 'Lato', sans-serif;
+    --text-font: font-family: 'Sen', sans-serif;
+}
+
+body {
+    background-image: linear-gradient(to bottom, #f1f3d1, #f1f3d1, #f1f3d1, );
+    color: rgb(10, 21, 37);
+}
+
+.front {
+    padding: 10%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-content: center;
+    justify-items: center;
+}
+
+.headshot {
+    flex: 1;
+    margin: 0 auto;
+}
+
+.headshot img {
+    border-radius: 50%;
+}
+
+.showcase {
+    flex: 2;
+    padding: 5%;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.showcase h1 {
+    font-size: 4rem;
+    font-family: var(--main-font);
+    color: rgb(17, 190, 196);
+}
+
+.showcase p {
+    padding: 3% 0;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    font-family: var(--secondary-font);
+    color: rgb(65, 63, 62);
+}
+
+
+/* .fa {
+    color: white;
+} */
+
+.fa:hover {
+    color: black;
+}
+
+.btn {
+    display: flex;
+    width: auto;
+}
+
+.btn button {
+    padding: 2%;
+    width: auto;
+    font-size: 1.5rem;
+    font-family: var(--text-font);
+    margin-right: 10px;
+    border: 3px solid #30aef7;
+    background-color: #7fcefc;
+}
+
+.btn button:hover {
+    background-color: #588ead;
+    border: 3px solid #2587c0;
+}
+
+.btn button a {
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.btn button a:hover {
+    color: black;
+}
+
+.btn button a:visited {
+    color: rgb(216, 25, 25);
+}
+
+.background {
+    height: 100vh;
+}
+
+.background h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: rgb(64, 109, 109);
+    font-family: var(--main-font);
+}
+
+.container {
+    width: 90%;
+    padding: 3%;
+    border: 3px solid rgb(109, 105, 105);
+    border-top-style: none;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: rgb(11, 60, 66);
+    font-family: var(--main-font);
+}
+
+.skills {
+    flex: 2;
+    padding: 5%;
+    color: rgb(59, 70, 71);
+}
+
+.skills p {
+    padding-bottom: 5%;
+    text-align: start;
+    font-size: 1.3rem;
+    font-family: var(--secondary-font);
+    color: rgb(60, 80, 82);
+}
+
+.education {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 2px solid black;
+}
+
+.education article {
+    padding: 5%;
+}
+
+.education article h3 {
+    color: rgb(7, 44, 99);
+    font-size: 1.5rem;
+}
+
+.education article p {
+    color: rgb(5, 81, 83);
+}
+
+.education article .subDetails {
+    color: black
+}
+
+.skilList {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 3%;
+    align-items: flex-start;
+    width: 50%;
+}
+
+.tech {
+    color: rgb(61, 46, 33);
+}
+
+.db {
+    color: rgb(146, 117, 92);
+}
+
+.tools {
+    color: rgb(105, 80, 58);
+}
+
+.design {
+    color: rgb(158, 139, 124);
+}
+
+.keySkills li {
+    list-style: none;
+    font-size: 1rem;
+}
+
+.mywork {
+    padding: 5%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.morelink {
+    font-size: 3rem;
+}
+
+.morelink a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: lightgreen;
+    cursor: pointer;
+}
+
+.morelink a:hover {
+    color: rgb(98, 161, 98);
+    font-size: 2.5rem;
+}
+
+.morelink a:visited {
+    color: red;
+    text-decoration: line-through;
+}
+
+.mywork h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-family: var(--main-font);
+}
+
+.work {
+    padding: 10%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding: 3%;
+    font-family: var(--text-font);
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.img {
+    flex: 2;
+}
+
+.img img {
+    width: 100%;
+}
+
+.projectInfo {
+    flex: 1;
+}
+
+footer {
+    text-align: center;
+    background-color: aqua;
+    padding: 1rem;
+    font-family: var(--secondary-font);
+}
+
+footer a {
+    text-decoration: none;
+    font-family: var(--text-font);
+}
+
+@media only screen and (max-width: 700px) {
+    .front {
+        margin: 10% auto;
+        width: 80%;
+        height: 70vh;
+    }
+    .btn button {
+        padding: 3%;
+        width: 10 0%;
+    }
+    .skills h3 {
+        font-size: 1.5rem;
+    }
+    .background {
+        height: 100vh;
+    }
+    .education {
+        border: none;
+    }
+    .container {
+        flex-direction: column;
+    }
+}
