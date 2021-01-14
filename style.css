@@ -5,140 +5,236 @@
 }
 
 header{
-  
+    position: fixed;
     display: flex;
-    justify-content: space-around;
-    width: 100%;
+    justify-content: space-between;
+    width: 100vw;
     text-align: center;
     align-items: center;
-    padding: 5% auto;
-    
+  height: 8vh;
+  border-bottom: 1px white solid;
+ 
+  background: #DBD1EB ;
 }
-body{
-    background: cornsilk;
-    width: 100%;
+  body{
+    background: rgb(245, 244, 239);
+    text-align: center;
 }
-
 li{
     list-style: none;
 }
-
-img{
-    width: 100%;
+a{
+    text-decoration: none;
 }
 
 header nav{
     display: flex;
     justify-content: space-between;
-    flex: 1;
-    display: none;
     
+    margin: auto;
 }
 
-header h1{
-  flex: 1;
+nav ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
 }
+
+nav ul li a{
+    color: rgb(100, 100, 98);
+    padding: 1rem;
+}
+
+
 
 /* home */
-
+section{
+    background-image: linear-gradient(to right top, #dbd1eb, #f5cedf, #ffd1c8, #f8dab7, #dae8ba);
+    margin: 0 auto;
+    
+}
 #home{
     display: flex;
     align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     height: 100vh;
-    margin: auto;
-    width: 80%;
-    margin: 0 auto;
+    
 }
 #home .img{
-    width: 100%;
+    margin-left: 5rem;
 }
-
 #home img{
     border-radius: 50%;
-    
-    margin: 0 auto;
+
+}
+
+.showcase{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+ 
+}
+
+
+.content h1{
+    font-size: 2rem;
+    color: rebeccapurple;
+}
+
+.content p{
+    color: rgb(243, 81, 60);
+    padding:2rem 4rem;
+    font-size: 1rem;
+}
+.button{
+    display: flex;
     align-items: center;
+    justify-content: space-around;
+    font-size: 1rem;
+
 }
 
 #about{
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-   
-    width: 80%;
     margin: 0 auto;
-    padding: 5%;
 }
-#about p{
-    padding: 5%;
+
+    
+fieldset{
+    width: 90%;
+  
+}
+.am{
+    font-size: 1rem;
+
 }
 
 
 .info{
     display: flex;
     justify-content: space-around;
-    padding: 5%;
-   
+    padding-top: 2rem;   
 }
-
-.info h3{
+fieldset legend{
+    font-size: 2rem;
     padding: 1rem;
+    text-align: center;
 }
 
-.education{
+.me{
+    padding: 3rem;
+    margin-top: 3rem;
+}
+
+
+.edug{
     display: flex;
     justify-content: space-around;
-
-    width: 100%;
-    padding: 5%;
+    padding: 3%;
 }
 
 
 section > h2{
     font-size: 3rem;
+    padding: 1rem;
+    color: rgb(211, 69, 216);
 }
 
 #portfolio{
  display: flex;
  flex-direction: column;
- text-align: center;
- width: 80%;
+padding-top: 5%;
  margin: 0 auto;
-
+ align-items: center;
+justify-content: space-between;
+ 
 }
 
-
-
 .proholder{
-    display: flex;
- margin-top: 5%;
+display: flex;
 align-items: center;
 justify-content: space-between;
-height: auto;
 flex-direction: column;
 }
 
+/* portfolio */
+
 #portfolio img{
-    width: 50%;
-    float: left;
+    width: 500px;
 }
 
 
 .pro{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    margin: 1rem;
+    
 }
 
-footer{
+.proinfo{
+    padding: 1rem;
     display: flex;
     width: 100%;
     justify-content: space-around;
-    padding: 1rem 0;
-    text-align: center;
-    align-items: center;
 }
+
+@media only screen and (max-width: 768px) {
+    #home{
+        flex-direction: column;
+   
+        
+    }
+
+    #home .img{
+        all: unset;
+    }
+    #home img{
+        border-radius: 50%;
+        width: 50%;
+        margin: 0 auto;
+    
+    }
+    #portfolio img{
+        width: 300px;
+    }
+    .edug{
+        flex-direction: column;
+    }
+    
+  }
+
+
+  footer{
+     
+      display: flex;
+      align-items: center;
+      height: 8vh;
+      text-align: center;
+      margin: 0 auto;
+      justify-content: center;
+     background: rgb(233, 206, 196);
+    
+  }
+  footer p{
+  
+  }
+
+  .sos{
+      
+      margin-left: 3rem;
+      display: flex;
+      justify-content: center;
+      
+  }
+  .sos a{
+      margin: 1rem;
+  }
+  .fa-heart{
+      color: red;
+  }
+
