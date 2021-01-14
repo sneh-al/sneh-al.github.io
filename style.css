@@ -85,6 +85,10 @@ header h1{
    
 }
 
+.info h3{
+    padding: 1rem;
+}
+
 .education{
     display: flex;
     justify-content: space-around;
@@ -128,4 +132,13 @@ flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+footer{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 1rem 0;
+    text-align: center;
+    align-items: center;
 }
