@@ -1,182 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snehal Chaudhari</title>
+    <title>Snehal | Lycan</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Sen&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <!-- animation on scroll -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   
 </head>
-
 <body>
-    <section class="front" data-aos="zoom-out-up" data-aos-duration="2000">
-        <div class="headshot">
-            <img src="./asset/headshot.jpg" alt="" srcset="">
-        </div>
-        <div class="showcase">
-            <h1>Yo, sup !!</h1>
-            <p>This is Snehal Chaudhari,A geeky minded Computer Engineer focusing on exploring and learning web development.</p>
-            <div class="btn">
-                <button><a href="#project">My Work</a></button>
-                <button class="resume"><a href="">Resume</a></button>
-                <button><a href="mailto:snehal1380@gmail.com"><i class="fa fa-envelope"></i> Mail Me</a></button>
-
+    <header>
+        <h1 class="logo"><a href="#home">Snehal</a></h1>
+      
+    </header>
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <div class="img">
+                <img src="https://avatars3.githubusercontent.com/u/52321728?s=400&u=5ab6e4c8e82cbf33a6bbfefe37940644c1c8a005&v=4" alt="Snehal">
+                
             </div>
-        </div>
-    </section>
+            <div class="Showcase">
+                <div class="content">
+                <h1>Yo, 'sup?</h1>
+                <p>This is <abbr title="Snehal Chaudhar">Snehal</abbr>,A geeky minded Computer Engineer focusing on exploring and learning web development.</p>
+                </div>
+                <div class="button">
+                   
+                    <a class="btn btn-default btn-lg" href="https://www.github.com/sneh13" role="button" target="_blank"><i class="fab fa-github"></i> Github</a>
 
-    <section class="background" id="about">
-        <div class="title" data-aos="zoom-in">
-            <h1>About Me</h1>
-        </div>
-        <div class="container">
+                    <a href="mailto:snehal1380@gmail.com"><i class="fab fa-github"></i> Mail Me</a>
+                </div>
+            </div>
+        </section>
+       <!-- /About Section  -->
+        <section id="about">
+            <h2>About Me</h2>
+            <fieldset>
 
-            <div class="skills" data-aos="fade-up" data-aos-duration="2000">
+                <legend>About Me</legend>
                 <p>
-                    It all started with Fundamentals of Programming. Over the period of my acadmic, I learned Data Structures, Object Oriented Programming, Database Management Systems, Open Source Softwares & Frameworks and many things. Apart from these, i'm learning Mathematics
-                    and Theory of Computation.
+                    Graduate in  Computer Enginering and geek with little experence working across web technologies.
 
+                    I love technology, travelling, music, learning and sharing knowledge.
+
+                    When I'm  not learning a technology, I'm probably reading, having a deep conversation, eatching tv/anime/movie or going through  some history.
                 </p>
-                <h3>Here are a few technologies and tools I've been learning/working with recently</h3>
+                <div class="info">
 
-                <div class="skilList">
-                    <div class="left">
-                        <div class="tech">
-                            <ul class="keySkills">
-
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                            </ul>
-                        </div>
-                        <div class="db">
-                            <ul class="keySkills">
-                                <li>MySql</li>
-                                <li>Mongodb</li>
-                                <li>MSSql</li>
-
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <div class="tools">
-                            <ul class="keySkills">
-                                <li>Git/Github</li>
-                                <li>Heroku</li>
-                                <li>firebase</li>
-                                <li>Nodejs</li>
-
-                            </ul>
-                        </div>
-                        <div class="design">
-                            <ul class="keySkills">
-                                <li>AdobeXd</li>
-                                <li>Figma</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <ul>
+                        <h3>Knowledge</h3>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>MySql</li>
+                    </ul>
+                    <hr>
+                    <div class="fam">
+                    <h3>Familarity</h3>
+                    <p>C, C++, SCSS, Nodejs, MongoDb, Figma, Heroku, firebase, Expressjs</p>
                 </div>
-
-
-            </div>
-            <div class="education" data-aos="fade-down" data-aos-duration="2000">
-
-                <div class="title" data-aos="zoom-in">
-                    <h1>Education</h1>
                 </div>
-
-                <article>
-                    <h3>Bacholre Of Computer Engineering</h3>
-                    <p class="subDetails">2015 to Present</p>
-                    <p>C.K. Pithawala Collage Of Engineering and Technology</p>
-                    <p>Gujarat Technological University</p>
-                </article>
-
-
-                <article>
-                    <h3>Diploma in Computer Engineering</h3>
-                    <p class="subDetails">2011-2015</p>
-                    <p>Institue Of Diploma Studies</p>
-                    <p>Nirma University</p>
-                    <p>54.05%</p>
-                </article>
-
-            </div>
-
-
-        </div>
-    </section>
-
-    <section class="mywork" id="project">
-        <div class="title" data-aos="zoom-in">
-            <h1>My Work</h1>
-        </div>
-        <div class="work">
-            <!-- <div class="project">
-                <div clas s="img">
-                    <img src="./asset/wepro.JPG">
-                </div>
-                <div class="projectInfo">
-                    <h3><a href="https://myindex-dd9a4.firebaseapp.com/">Wepro</a></h3>
-                    <p>Landing Page for web Company</p>
-                </div>
-            </div> -->
-            <div class="project">
-                <div class="img" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="2000">
-                    <img src="./asset/corona.JPG">
-                </div>
-                <div class="projectInfo" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000">
-                    <h3><a href="https://codepen.io/sneh13/pen/LYVgWWX">Corona pendamic</a></a>
+            </fieldset>
+            <fieldset class="education">
+                <legend>Education</legend>
+                <div class="edu">
+                    <h3 class="degree">Bacholre Of Computer Engineering
                     </h3>
-                    <p>Corona Pendamic Information page</p>
+                    <p class="time">2015 to 2020</p>
+                    <p class="college">C.K. Pithawala Collage Of Engineering and Technology</p>
+                    <p class="university">Gujarat Technological University</p>
+                    <p>56.80%</p>
                 </div>
+                <div class="edu">
+                    <h3 class="degree">Diploma in Computer Engineering  </h3>
+                    <p class="time">2011 to 2015</p>
+                    <p class="college">Institue Of Diploma Studies</p>
+                    <p class="university">Nirma University
+                    </p>
+                    <p>54.05%</p>
+                </div>
+            </fieldset>
+        </section>
+        <!-- Portfolio Section -->
+        <section id="portfolio">
+            <h2>Projects</h2>
+            <div class="proholder">
+            <div class="pro">
+                <img src="./rpc.jpg" alt="ROckPaperCessior" class="pthumb">
+                <a href="https://rock-paper-scissor-e90b8.firebaseapp.com/" class="pname">Rock Paper Scissor</a>
+                
             </div>
-            <div class="project reverse">
-                <div class="img" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="2000">
-                    <img src="./asset/br.JPG">
-                </div>
-                <div class="projectInfo" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000">
-                    <h3><a href="https://codepen.io/sneh13/pen/OJVooGp">Tribute Page</a></h3>
-                    <p>Tribute Page callange from Freecodecamp.org</p>
-                </div>
+          
+
+            <div class="pro">
+                <img src="./wepro.jpg" alt="WePro" class="pthumb">
+                <a href="https://myindex-dd9a4.web.app/" class="pname">WePro</a>
+            
             </div>
-            <div class="project">
-                <div class="img" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="2000">
-                    <img src="./asset/wepro.JPG">
-                </div>
-                <div class="projectInfo" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000">
-                    <h3><a href="https://myindex-dd9a4.firebaseapp.com/">Wepro</a></h3>
-                    <p>Landing Page for web Company</p>
-                </div>
+
+            <div class="pro">
+                <img src="./cg.jpg" alt="Cat Genrator" class="pthumb">
+                <a href="https://cat-genrator.web.app/" class="pname">Cat Genrator</a>
+                
             </div>
-        </div>
 
-        <div class="morelink" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="2000">
-            <p>See more project on <a href="https://github.com/Sneh13" target="_blank">Github<sub><i class="fa fa-angle-double-right"></i></a></p>
-        </div>
-        </div>
-    </section>
+            <div class="pro">
+                <img src="./moon.jpg" alt="Cat Genrator" class="pthumb">
+                <a href="https://moon-d1f83.web.app/" class="pname">TO the Moon And Back</a>
+            </div>
+            <div class="pro">
+                <img src="./blog.jpg" alt="blogs" class="pthumb">
+                <a href="https://harvest-even-shame.glitch.me/blogs" class="pname">Mini Blog Creator</a> 
+            </div>
 
+            <div class="pro">
+                <img src="./odessys.jpg" alt="journy" class="pthumb">
+                <a href="https://harvest-even-shame.glitch.me/blogs" class="pname">Travel Landng Page</a>
+            </div>
 
-    <footer>
-        <p>Designed & Built by <a href="https://github.com/Sneh13">Snehal</a></p>
-        <div class="socialmedi">
-            <a href="http://facebook.com/sneh13"><i class="fa fa-facebook-official"></i></a>
-            <a href="http://codepen.io/sneh13"><i class="fa fa-codepen" ></i></a>
-            <a href="https://www.instagram.com/sneh.al"><i class="fa fa-codepen"></i></a>
-            <a href="http://codepen.io/sneh13"><i class="fa fa-codepen"></i></a>
-        </div>
-    </footer>
+        </div> 
+        </section>
+        <!-- contact Section -->
+        <footer>
+            <p>Design & devlope By <a href="https://www.github.com/sneh13" role="button" target="_blank"><i class="fab fa-github"></i> Github</a></p>
+            <button><a href="#home">home</a></button>
+        </footer>
 
-    <script>
-        AOS.init();
-    </script>
+    </main>
 </body>
-
 </html>
