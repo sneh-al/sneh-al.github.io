@@ -6,12 +6,14 @@
     <title>Snehal</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-   
+   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  
 </head>
 <body>
     <header>
         <nav>
-            <ul>
+            <ul data-aos="fade-down">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#portfolio">Protfolio</a></li>
@@ -23,21 +25,21 @@
     <main>
         <!-- Home Section -->
         <section id="home">
-            <div class="img">
+            <div class="img" data-aos="zoom-in">
                 <img src="https://avatars3.githubusercontent.com/u/52321728?s=400&u=5ab6e4c8e82cbf33a6bbfefe37940644c1c8a005&v=4" alt="Snehal">
         
             </div>
            
             <div class="showcase">
                 <div class="content">
-                <h1>Yo, 'sup?</h1>
-                <p>This is <abbr title="Snehal Chaudhar">Snehal</abbr>, geeky minded Computer Engineer focusing on exploring and learning web development.</p>
+                <h1 data-aos="zoom-in-down">Yo, 'sup?</h1>
+                <p data-aos="fade-up">This is <abbr title="Snehal Chaudhar">Snehal</abbr>, geeky minded Computer Engineer focusing on exploring and learning web development.</p>
                 </div>
                 <div class="button">
                    
-                    <a href="https://www.github.com/sneh13" target="_blank"><i class="fab fa-github"></i> Github</a>
+                    <a data-aos="fade-up-right" href="https://www.github.com/sneh13" target="_blank"><i class="fab fa-github"></i> Github</a>
 
-                    <a href="mailto:snehal1380@gmail.com"><i class="fas fa-envelope"></i> Mail Me</a>
+                    <a data-aos="fade-up-left" href="mailto:snehal1380@gmail.com"><i class="fas fa-envelope"></i> Mail Me</a>
                 </div>
             </div>
         </section>
@@ -155,5 +157,9 @@
         </footer>
 
     </main>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
