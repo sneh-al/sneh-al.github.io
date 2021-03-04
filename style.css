@@ -121,6 +121,9 @@ fieldset{
     padding-top: 2rem;  
     color: rgb(219, 70, 33); 
 }
+.info > *{
+    padding:1rem;
+    }
 
 .info h3{
     color: rgb(172, 58, 30); 
