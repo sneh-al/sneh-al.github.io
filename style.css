@@ -13,8 +13,7 @@ header{
     align-items: center;
   height: 8vh;
   border-bottom: 1px white solid;
- z-index:100;
-  background: #DBD1EB ;
+   background: #DBD1EB ;
 }
   body{
     background: rgb(245, 244, 239);
