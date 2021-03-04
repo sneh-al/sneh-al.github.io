@@ -43,6 +43,7 @@ nav ul{
 nav ul li a{
     color: rgb(100, 100, 98);
     padding: 1rem;
+    color: black !important;
 }
 
 
