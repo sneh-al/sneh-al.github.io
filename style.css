@@ -19,6 +19,7 @@ header{
   body{
     background: rgb(245, 244, 239);
     text-align: center;
+      overflow:hidden;
 }
 li{
     list-style: none;
