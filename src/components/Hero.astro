@@ -1,0 +1,60 @@
+---
+import Photo from "../assets/Photo.png";
+---
+
+<section
+    class='flex p-5 min-h-screen md:p-14 m lg:p-24 flex-col-reverse md:flex-row relative'>
+    <div class='lg:w-1/2 z-10 lg:ml-auto'>
+        <div class='flex flex-col leading-10 lg:tracking-widest md:pt-96'>
+            <div class='md:pt-56 lg:pt-0 md:max-w-prose'>
+                <h1 class='font-bold w-full text-6xl md:text-7xl lg:text-8xl'>
+                    Yo! 'sup?
+                    <br class='inline-block' /> I'm Snehal,
+                </h1>
+
+                <p class='text-4xl'>
+                    your friendly neighborhood web developer, sailing through
+                    the Grand Line of the Internet! With the extraordinary
+                    powers bestowed upon me by the Comp-Engu no Mi devil fruit
+                    and the Ingenius Haki, I am passionate about creating
+                    captivating websites and building cool web applications.
+                </p>
+                <div class='text-2xl md:text-3xl mt-10 grid gap-10 text-left'>
+                    <button class='p-5 group bg-rose-400 text-left relative'>
+                        <span class='w-full h-full'> learn more about me</span>
+                    </button>
+                    <button class='p-5 bg-rose-400 text-left'
+                        >Check out my projects</button
+                    >
+                    <button class='p-5 bg-rose-400 text-left'
+                        >Send me an email</button
+                    >
+                    <button class='p-5 bg-rose-400 text-left md:hidden'
+                        >Github</button
+                    >
+                    <button
+                        class='p-5 group bg-rose-400 text-left relative md:hidden'>
+                        <span class='w-full h-full'> Instagram</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div
+        class='grid pt-64 place-content-center md:pt-64 md:flex md:flex-col md:justify-end gap-5 md:w-1/2 md:h-screen sticky top-0'
+        id='about'>
+        <img
+            src={Photo}
+            id='poster'
+            class='object-cover pt-100 object-top w-96 h-96 rounded-full bg-red-100'
+            alt='Wanted poster image'
+            width='100%'
+        />
+        <div class='hidden text-2xl md:text-3xl md:grid gap-10 text-left'>
+            <button class='p-5 bg-rose-400 text-left'>Github</button>
+            <button class='p-5 group bg-rose-400 text-left relative'>
+                <span class='w-full h-full'> Instagram</span>
+            </button>
+        </div>
+    </div>
+</section>
