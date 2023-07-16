@@ -1,13 +1,12 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Intro from "../components/Intro.astro";
+import About from "../components/About.astro";
+import Page from "../layouts/Page.astro";
 ---
 
-<Layout title='Welcome to Astro.'>
-    <main class='max-w-6xl m-auto pt-80'>
-        <h2 class='font-bold w-full text-5xl md:text-7xl lg:text-8xl p-14'>
-            Get to Know Me
-        </h2>
-        <Intro />
-    </main>
-</Layout>
+<Page
+    title='About me | Snehal'
+    pageTitle=' Get to Know Me'
+    href='/stuff'
+    text='Check out my projects'>
+    <About />
+</Page>

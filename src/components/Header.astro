@@ -1,15 +1,54 @@
-<header class='flex top-0 z-20 w-full p-5 bg-red-200'>
-    <nav class='m-auto md:ml-auto'>
-        <ul class='flex gap-2 p-5'>
-            <li class='bottom-0'>
-                <a href='/'>Home</a>
-            </li>
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+const activeStyle = "underline underline-offset-8 decoration-rose-500 ";
+---
+
+<header
+    class='grid top-0 z-50 w-full border-b-2 border-rose-500 fixed text-white'>
+    <div class='grid place-content-center bg-[#0E2A47] p-5 pt-10'>
+        <a href='/' class='text-2xl md:text-5xl lg:tex-7xl'>Snehal Chaudhhari</a
+        >
+    </div>
+
+    <nav
+        class='flex w-full items-center justify-evenly flex-col md:flex-row bg-[#0E2A47]'>
+        <div class='bg-rose-500 w-1/2 h-px hidden lg:inline'></div>
+
+        <button class='md:hidden' id='toggler'>menu</button>
+
+        <ol
+            class='hidden md:flex gap-2 p-5 justify-evenly w-full list-decimal'
+            id='nav'>
             <li class=''>
-                <a href='/me'>Get to Know Me</a>
+                <a href='/' class={currentPath === "" ? activeStyle : ""}
+                    >Home</a
+                >
             </li>
-            <li class='bottom-0'>
-                <a href='/stuff'>Check out my Stuff</a>
+            <li class='w-'>
+                <a href='/me' class={currentPath === "me" ? activeStyle : ""}
+                    >Get to Know Me</a
+                >
             </li>
-        </ul>
+            <li class='w-'>
+                <a
+                    href='/stuff'
+                    class={currentPath === "stuff" ? activeStyle : ""}
+                    >Check out my Stuff</a
+                >
+            </li>
+        </ol>
+        <div class='bg-rose-500 w-1/2 h-px hidden lg:inline'></div>
     </nav>
 </header>
+<style>
+    .bg {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1000%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3ccircle r='46.666666666666664' cx='857.03' cy='547.75' stroke='%23d3b714' stroke-width='1' stroke-dasharray='3%2c 3'%3e%3c/circle%3e%3ccircle r='48.373022345418434' cx='1187.79' cy='141.05' fill='%23d3b714'%3e%3c/circle%3e%3crect width='216' height='216' clip-path='url(%26quot%3b%23SvgjsClipPath1001%26quot%3b)' x='712.5' y='142.65' fill='url(%26quot%3b%23SvgjsPattern1002%26quot%3b)' transform='rotate(144.32%2c 820.5%2c 250.65)'%3e%3c/rect%3e%3cpath d='M1154.75 522.46L1163.41 513.02 1174.51 519.39 1183.17 509.96 1194.28 516.33 1202.94 506.89 1214.04 513.27' stroke='%23e73635' stroke-width='1' stroke-dasharray='2%2c 2'%3e%3c/path%3e%3ccircle r='82.42130393438889' cx='99.28' cy='43.96' fill='%23d3b714'%3e%3c/circle%3e%3ccircle r='46.666666666666664' cx='984.62' cy='400.8' stroke='%23e73635' stroke-width='1'%3e%3c/circle%3e%3ccircle r='46.666666666666664' cx='1172.73' cy='155.85' stroke='%23d3b714' stroke-width='1.68' stroke-dasharray='2%2c 2'%3e%3c/circle%3e%3crect width='286.88' height='286.88' clip-path='url(%26quot%3b%23SvgjsClipPath1003%26quot%3b)' x='1186.14' y='326.81' fill='url(%26quot%3b%23SvgjsPattern1004%26quot%3b)' transform='rotate(248.12%2c 1329.58%2c 470.25)'%3e%3c/rect%3e%3crect width='60' height='60' clip-path='url(%26quot%3b%23SvgjsClipPath1005%26quot%3b)' x='999.98' y='41.33' fill='url(%26quot%3b%23SvgjsPattern1006%26quot%3b)' transform='rotate(328.76%2c 1029.98%2c 71.33)'%3e%3c/rect%3e%3crect width='168' height='168' clip-path='url(%26quot%3b%23SvgjsClipPath1007%26quot%3b)' x='67.47' y='38.93' fill='url(%26quot%3b%23SvgjsPattern1008%26quot%3b)' transform='rotate(241.87%2c 151.47%2c 122.93)'%3e%3c/rect%3e%3cpath d='M681.78 260.62L689.87 250.69 701.33 256.41 709.42 246.48 720.88 252.19 728.97 242.26 740.43 247.97' stroke='%23e73635' stroke-width='1' stroke-dasharray='4%2c 4'%3e%3c/path%3e%3cpath d='M218.67 657.16 L244.13 579.16L287.2425569600777 674.0025569600778z' fill='%23d3b714'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1000'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cpattern x='0' y='0' width='216' height='6' patternUnits='userSpaceOnUse' id='SvgjsPattern1002'%3e%3crect width='216' height='3' x='0' y='0' fill='%23e73635'%3e%3c/rect%3e%3crect width='216' height='3' x='0' y='3' fill='rgba(0%2c 0%2c 0%2c 0)'%3e%3c/rect%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath1001'%3e%3ccircle r='54' cx='820.5' cy='250.65'%3e%3c/circle%3e%3c/clipPath%3e%3cpattern x='0' y='0' width='6.52' height='6.52' patternUnits='userSpaceOnUse' id='SvgjsPattern1004'%3e%3cpath d='M3.26 1L3.26 5.52M1 3.26L5.52 3.26' stroke='%23037b0b' fill='none' stroke-width='1.02'%3e%3c/path%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath1003'%3e%3ccircle r='71.72' cx='1329.58' cy='470.25'%3e%3c/circle%3e%3c/clipPath%3e%3cpattern x='0' y='0' width='6' height='6' patternUnits='userSpaceOnUse' id='SvgjsPattern1006'%3e%3cpath d='M3 1L3 5M1 3L5 3' stroke='%23e73635' fill='none' stroke-width='1.17'%3e%3c/path%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath1005'%3e%3ccircle r='15' cx='1029.98' cy='71.33'%3e%3c/circle%3e%3c/clipPath%3e%3cpattern x='0' y='0' width='6' height='6' patternUnits='userSpaceOnUse' id='SvgjsPattern1008'%3e%3cpath d='M3 1L3 5M1 3L5 3' stroke='%23d3b714' fill='none' stroke-width='1.06'%3e%3c/path%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath1007'%3e%3ccircle r='42' cx='151.47' cy='122.93'%3e%3c/circle%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e");
+    }
+</style>
+
+<script>
+    const toggler = document.querySelector("#toggler");
+    const nav = document.querySelector("#nav");
+    toggler.addEventListener("click", () => nav.classList.toggle("hidden"));
+</script>

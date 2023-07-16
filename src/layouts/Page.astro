@@ -1,0 +1,15 @@
+---
+import NaLinks from "../components/NaLinks.astro";
+import Layout from "./Layout.astro";
+const { title, href, text, pageTitle } = Astro.props;
+---
+
+<Layout title={title}>
+    <main class='max-w-6xl m-auto p-5'>
+        <h2 class='font-bold w-full text-5xl md:text-7xl my-10'>
+            {pageTitle}
+        </h2>
+        <slot />
+        <NaLinks href={href} ' text={text} />
+    </main>
+</Layout>

@@ -1,0 +1,17 @@
+---
+const { href, text } = Astro.props;
+---
+
+<a href={href} class='text-left md:text-3xl bg flex'>
+    <span class='p-5 bg-rose-500 w-full bg-opacity-90 text-blue-100'>
+        {text}
+    </span>
+</a>
+
+<style>
+    .bg {
+        background: url("../assets/button.svg");
+        background-size: cover;
+        background-position: center;
+    }
+</style>

@@ -1,0 +1,23 @@
+---
+import Card from "../layouts/Card.astro";
+import WorkLayout from "../layouts/workLayout.astro";
+
+const res = await fetch("https://api.github.com/users/sneh-al/repos");
+const repos = await res.json();
+---
+
+<section>
+    <WorkLayout title='Other Work' />
+    <ul>
+        {
+            repos.map((repo) => (
+                <Card
+                    title={repo.name}
+                    href={repo.html_url}
+                    body={repo?.description}
+                    homepage={repo.homepage}
+                />
+            ))
+        }
+    </ul>
+</section>

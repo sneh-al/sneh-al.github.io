@@ -1,0 +1,9 @@
+---
+import Link from "../layouts/Link.astro";
+const { href, text } = Astro.props;
+---
+
+<div class='md:text-3xl mt-10 grid md:grid-cols-2 text-left mb-10 gap-5'>
+    <Link href='/' text='Back to Home' />
+    <Link href={href} text={text} />
+</div>
