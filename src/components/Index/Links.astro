@@ -1,12 +1,18 @@
 ---
 import ExternalLink from "../../layouts/ExternalLink.astro";
 import Link from "../../layouts/Link.astro";
+import EmailSvg from "../../assets/email.svg";
+import ArrowRightSvg from "../../assets/ArrowRight.svg";
 ---
 
 <div class='mt-10 grid gap-10'>
-    <Link href='/me' text='learn more about me' />
-    <Link href='/stuff' text='Check out my projects' />
-    <Link href='mailto:snehal1380@gmail.com' text='Send me an email' />
+    <Link href='/me' icon={ArrowRightSvg} text='learn more about me' />
+    <Link href='/stuff' icon={ArrowRightSvg} text='Check out my projects' />
+    <Link
+        href='mailto:snehal1380@gmail.com'
+        icon={EmailSvg}
+        text='Send me an email'
+    />
     <div class='flex flex-col gap-10 md:hidden'>
         <ExternalLink href='https://github.com/sneh-al' text='Github' />
         <ExternalLink

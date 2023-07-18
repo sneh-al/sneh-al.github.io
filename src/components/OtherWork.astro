@@ -1,23 +1,27 @@
 ---
 import Card from "../layouts/Card.astro";
 import WorkLayout from "../layouts/workLayout.astro";
-
-const res = await fetch("https://api.github.com/users/sneh-al/repos");
-const repos = await res.json();
+import { filterArrayByDate } from "../utils/arrayfilter.js";
+const repos = await Astro.glob("../content/other/*.md");
 ---
 
 <section>
-    <WorkLayout title='Other Work' />
-    <ul>
-        {
-            repos.map((repo) => (
-                <Card
-                    title={repo.name}
-                    href={repo.html_url}
-                    body={repo?.description}
-                    homepage={repo.homepage}
-                />
-            ))
-        }
-    </ul>
+    <WorkLayout title='Other Work'>
+        <ul class='grid gap-5'>
+            {
+                repos.map((repo) => (
+                    <li>
+                        <Card
+                            title={repo.frontmatter.title}
+                            href={repo.frontmatter.github}
+                            body='fsdfsdkfnksdnfksd jl'
+                            homepage={repo.frontmatter.visit}
+                            topics={repo.frontmatter.tags}
+                            image={repo.frontmatter.image}
+                        />
+                    </li>
+                ))
+            }
+        </ul>
+    </WorkLayout>
 </section>

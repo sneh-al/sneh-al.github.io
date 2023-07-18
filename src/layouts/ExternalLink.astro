@@ -1,5 +1,6 @@
 ---
 const { href, text } = Astro.props;
+import ExternalSvg from "../assets/external.svg";
 ---
 
 <a
@@ -7,8 +8,10 @@ const { href, text } = Astro.props;
     target='_blank'
     rel='noopener noreferrer'
     class='text-left md:text-3xl flex bg'>
-    <span class='p-5 bg-rose-500 w-full bg-opacity-90 text-blue-100'>
+    <span
+        class='p-5 bg-rose-500 w-full bg-opacity-90 text-blue-100 flex items-ceter justify-between'>
         {text}
+        <img src={ExternalSvg} class='w-10 h-10 my-auto' />
     </span>
 </a>
 

@@ -1,10 +1,12 @@
 ---
-const { href, text } = Astro.props;
+const { href, text, icon } = Astro.props;
 ---
 
 <a href={href} class='text-left md:text-3xl bg flex'>
-    <span class='p-5 bg-rose-500 w-full bg-opacity-90 text-blue-100'>
+    <span
+        class='p-5 bg-rose-500 w-full bg-opacity-90 text-blue-100 flex items-center justify-between'>
         {text}
+        <img src={icon} alt='' class='w-10 h-10 my-auto' />
     </span>
 </a>
 
