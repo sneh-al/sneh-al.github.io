@@ -9,11 +9,14 @@ import Page from "../layouts/Page.astro";
   pageTitle=' Get to Know Me'
   href='/stuff'
   text='Check out my projects'>
-  <section class='flex w-full gap-5'>
+  <p
+    class='inline-block text-5xl absolute right-0 md:left-20'
+      data-scroll
+      data-scroll-sticky="true"
+data-scroll-target="body"
+      data-scroll-repeat
+      data-scroll-speed='.1'
+  >🪂</p>
     <About />
-    <div
-      class='sticky top-0 h-screen md:flex flex-col justify-center w-1/2 hidden'>
-      <ScrollInfo />
-    </div>
-  </section>
+
 </Page>

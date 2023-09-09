@@ -1,15 +1,24 @@
-<div class='bg-[#0E2A47] p-5 shadow-2xl bg-opacity-50'>
-  <p class='title text-xl text-rose-500'></p>
-  <p class='info text-2xl font-bold'></p>
+<div class='text-center p-5' data-scroll-section>
+  <p
+    class='title text-xl text-rose-500 transition-opacity duration-100 opacity-0'>
+  </p>
+  <p class='info text-2xl font-bold transition-opacity duration-100 opacity-0'>
+  </p>
 </div>
 
 <script>
+  import { scrollItems } from "../content/_scrolitems";
   function changeItem(title, item) {
     const list = document.querySelector(".info");
     const titleEl = document.querySelector(".title");
 
-    titleEl.textContent = title;
-    list.textContent = item;
+    setTimeout(function () {
+      titleEl.textContent = title;
+      list.textContent = item;
+
+      list.classList.remove("opacity-0");
+      titleEl.classList.remove("opacity-0");
+    }, 300);
   }
   function currentScrollPercentage() {
     return Math.floor(
@@ -21,113 +30,12 @@
   }
 
   window.addEventListener("scroll", () => {
-    switch (currentScrollPercentage()) {
-      case 10:
-        changeItem(null, "I'am  Snehal");
-        break;
-      case 12:
-        changeItem(null, "Web devloper");
-        break;
-      case 14:
-        changeItem("What i like", "Anime");
-        break;
-      case 16:
-        changeItem("What i like", "Movie");
-        break;
-      case 18:
-        changeItem("What i like", "Nature");
-
-        break;
-      case 20:
-        changeItem("Whati i like", "Philosopher");
-
-        break;
-      case 22:
-        changeItem("What i like", "Science");
-
-        break;
-      case 24:
-        changeItem("What i like", "technology");
-
-        break;
-      case 29:
-        changeItem(
-          "Diploma in comuter enginerring",
-          "Institute of Diploma studies"
-        );
-        break;
-
-      case 33:
-        changeItem("Diploma in comuter enginerring", "Nirma university - 2015");
-        break;
-      case 35:
-        changeItem("Comuter enginerring", "C.k. pithawala, ");
-        break;
-      case 37:
-        changeItem(
-          "Comuter enginerring",
-          "Gujarat technological university -2020"
-        );
-        break;
-      case 40:
-        changeItem("I work at", "Sarvadhi Solutions Private Limited");
-        break;
-      case 43:
-        changeItem("I work at", "3 month internship");
-        break;
-      case 48:
-        changeItem("I work at", "7 month work");
-        break;
-      case 51:
-        changeItem("Technology i work on", "React");
-        break;
-      case 55:
-        changeItem("Technology i work on", "Electronjs");
-        break;
-      case 67:
-        changeItem("Things i do", "Exploring the outdoors");
-        break;
-      case 69:
-        changeItem("Things i do", "Participating in artistic activities");
-        break;
-      case 71:
-        changeItem("Things i do", "Watching anime");
-        break;
-      case 72:
-        changeItem("Things i do", "watching movie");
-        break;
-      case 74:
-        changeItem("Things i do", "Keeping up with technology advancements");
-        break;
-      case 76:
-        changeItem("Things i do", "Traveling and experiencing new cultures ");
-        break;
-      case 78:
-        changeItem("Things i do", "Volunteer work or community service ");
-        break;
-      case 80:
-        changeItem(
-          "Things i do",
-          "Bringing ideas to life through web development"
-        );
-        break;
-      case 84:
-        changeItem("Looking for", "Enthusiastic");
-        break;
-      case 86:
-        changeItem("Looking for", "Passionate");
-        break;
-      case 88:
-        changeItem("Looking for", "Detail-Oriented");
-
-        break;
-      case 90:
-        changeItem("Looking for", "Continuous Learner");
-
-      default:
-        // changeItem("keep Scrolling", null);
-
-        break;
+    const percentage = currentScrollPercentage();
+    if (percentage in scrollItems) {
+      const item = scrollItems[percentage];
+      changeItem(item.category, item.value);
+    } else {
+      // changeItem("keep Scrolling", null);
     }
   });
 </script>

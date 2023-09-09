@@ -1,27 +1,26 @@
 ---
 import Card from "../layouts/Card.astro";
 import WorkLayout from "../layouts/workLayout.astro";
-import { filterArrayByDate } from "../utils/arrayfilter.js";
 const repos = await Astro.glob("../content/other/*.md");
 ---
 
 <section>
-    <WorkLayout title='Other Work'>
-        <ul class='grid gap-5'>
-            {
-                repos.map((repo) => (
-                    <li>
-                        <Card
-                            title={repo.frontmatter.title}
-                            href={repo.frontmatter.github}
-                            body='fsdfsdkfnksdnfksd jl'
-                            homepage={repo.frontmatter.visit}
-                            topics={repo.frontmatter.tags}
-                            image={repo.frontmatter.image}
-                        />
-                    </li>
-                ))
-            }
-        </ul>
-    </WorkLayout>
+  <WorkLayout title='Other Work'>
+    <ul class='grid gap-5'>
+      {
+        repos.map((repo) => (
+          <li>
+            <Card
+              title={repo.frontmatter.title}
+              href={repo.frontmatter.github}
+              body='fsdfsdkfnksdnfksd jl'
+              homepage={repo.frontmatter.visit}
+              topics={repo.frontmatter.tags}
+              image={repo.frontmatter.image}
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </WorkLayout>
 </section>

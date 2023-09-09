@@ -3,21 +3,27 @@ import ExternalLink from "../../layouts/ExternalLink.astro";
 import Link from "../../layouts/Link.astro";
 import EmailSvg from "../../assets/email.svg";
 import ArrowRightSvg from "../../assets/ArrowRight.svg";
+
+const svgClassName = "w-5 h-5 stroke-2"
 ---
 
-<div class='mt-10 grid gap-10'>
-    <Link href='/me' icon={ArrowRightSvg} text='learn more about me' />
-    <Link href='/stuff' icon={ArrowRightSvg} text='Check out my projects' />
-    <Link
-        href='mailto:snehal1380@gmail.com'
-        icon={EmailSvg}
-        text='Send me an email'
-    />
-    <div class='flex flex-col gap-10 md:hidden'>
-        <ExternalLink href='https://github.com/sneh-al' text='Github' />
-        <ExternalLink
-            href='https://www.instagram.com/sneh.al/'
-            text='Instagram'
-        />
-    </div>
+<div class='  lg:flex  gap-10 mt-5 '
+data-scroll
+data-scroll-direction="horizontal"
+data-scroll-speed="-1"
+        
+>
+    <Link href='/me'  text='learn more about me' >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class={svgClassName}>
+  <path fill-rule="evenodd" d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z" clip-rule="evenodd" />
+</svg>
+
+    </Link>
+    <Link href='/stuff' icon={ArrowRightSvg} text='Check out my stuff' >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class={svgClassName}>
+  <path fill-rule="evenodd" d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z" clip-rule="evenodd" />
+</svg>
+
+    </Link>
+
 </div>

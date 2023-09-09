@@ -5,11 +5,14 @@ const { title, href, text, pageTitle } = Astro.props;
 ---
 
 <Layout title={title}>
-    <main class='max-w-6xl m-auto p-5'>
-        <h2 class='font-bold w-full text-5xl md:text-7xl my-10'>
-            {pageTitle}
+    <main class='max-w-6xl m-auto p-5 pb-10'  >
+           
+        <h2 class='font-bold w-full text-5xl md:text-7xl my-10 text-yellow-300  flex items-end text-left h-[20vh]' data-scroll  data-scroll data-scroll-repeat data-scroll-speed="2"  >
+       
+            
+               {pageTitle}
+    
         </h2>
         <slot />
-        <NaLinks href={href} ' text={text} />
     </main>
 </Layout>

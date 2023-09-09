@@ -4,21 +4,46 @@ const currentPath = pathname.slice(1);
 const activeStyle = "underline underline-offset-8 decoration-rose-500 ";
 ---
 
-<header
-  class='grid top-0 z-50 w-full border-b-2 border-rose-500 text-white bg p-5'>
-  <div class='grid place-content-center p-5'>
-    <a href='/' class='text-2xl md:text-5xl lg:tex-7xl logo'
-      >Snehal Chaudhhari</a
+<header class='grid grid-cols-2 top-0 z-50 w-full  p-3 bg-transparent ' 
+  data-scroll data-scroll-sticky data-scroll-target="body">
+  <div class='flex items-center p-5 pb-0'>
+    <a
+      href='/'
+      class='text-xl md:text-2xl lg:text-3xl bg-gradient-to-tr from-purple-400 to-rose-400 bg-clip-text text-transparent font-extrabold'
+      >Snehal</a
     >
   </div>
 
-  <nav class='flex w-full items-center justify-evenly flex-col md:flex-row'>
-    <div class='bg-rose-500 w-1/2 h-px hidden lg:inline'></div>
+  <nav class='flex w-full items-center flex-col md:flex-row'>
+   
+ 
 
-    <button class='md:hidden' id='toggler'>menu</button>
+  
+<div class='ml-auto flex items-center justify-evenly gap-2 p-5 pb-0'>
+  
+   <svg xmlns="http://www.w3.org/2000/svg" id='themeChanger' fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-black dark:stroke-white">
+</svg>
+ <button  id='toggler'>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        id='bars'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke-width='1.5'
+        stroke='currentColor'
+        class='w-12 h-12 dark:stroke-white'>
+        <path
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          d='M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25'></path>
+      </svg>
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" id="close" class="w-5 h-5 hidden group-active:block">
+  <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+</svg> -->
+    </button>
 
     <ol
-      class='list-decimal list-inside hidden md:flex flex-col md:flex-row p-5 justify-evenly w-full'
+      class='list-decimal text-red-500 list-inside flex hidden  w-full   justify-center items-center gap-6 '
       id='nav'>
       <li class='p-5 md:p-0'>
         <a href='/' class={currentPath === "" ? activeStyle : ""}>Home</a>
@@ -34,22 +59,79 @@ const activeStyle = "underline underline-offset-8 decoration-rose-500 ";
         >
       </li>
     </ol>
-    <div class='bg-rose-500 w-1/2 h-px hidden lg:inline'></div>
+</div>
+   
   </nav>
 </header>
 <style>
   /* @import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap"); */
-  .bg {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1000%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3ccircle r='46.666666666666664' cx='857.03' cy='547.75' stroke='%23d3b714' stroke-width='1' stroke-dasharray='3%2c 3'%3e%3c/circle%3e%3ccircle r='48.373022345418434' cx='1187.79' cy='141.05' fill='%23d3b714'%3e%3c/circle%3e%3crect width='216' height='216' clip-path='url(%26quot%3b%23SvgjsClipPath1001%26quot%3b)' x='712.5' y='142.65' fill='url(%26quot%3b%23SvgjsPattern1002%26quot%3b)' transform='rotate(144.32%2c 820.5%2c 250.65)'%3e%3c/rect%3e%3cpath d='M1154.75 522.46L1163.41 513.02 1174.51 519.39 1183.17 509.96 1194.28 516.33 1202.94 506.89 1214.04 513.27' stroke='%23e73635' stroke-width='1' stroke-dasharray='2%2c 2'%3e%3c/path%3e%3ccircle r='82.42130393438889' cx='99.28' cy='43.96' fill='%23d3b714'%3e%3c/circle%3e%3ccircle r='46.666666666666664' cx='984.62' cy='400.8' stroke='%23e73635' stroke-width='1'%3e%3c/circle%3e%3ccircle r='46.666666666666664' cx='1172.73' cy='155.85' stroke='%23d3b714' stroke-width='1.68' stroke-dasharray='2%2c 2'%3e%3c/circle%3e%3crect width='286.88' height='286.88' clip-path='url(%26quot%3b%23SvgjsClipPath1003%26quot%3b)' x='1186.14' y='326.81' fill='url(%26quot%3b%23SvgjsPattern1004%26quot%3b)' transform='rotate(248.12%2c 1329.58%2c 470.25)'%3e%3c/rect%3e%3crect width='60' height='60' clip-path='url(%26quot%3b%23SvgjsClipPath1005%26quot%3b)' x='999.98' y='41.33' fill='url(%26quot%3b%23SvgjsPattern1006%26quot%3b)' transform='rotate(328.76%2c 1029.98%2c 71.33)'%3e%3c/rect%3e%3crect width='168' height='168' clip-path='url(%26quot%3b%23SvgjsClipPath1007%26quot%3b)' x='67.47' y='38.93' fill='url(%26quot%3b%23SvgjsPattern1008%26quot%3b)' transform='rotate(241.87%2c 151.47%2c 122.93)'%3e%3c/rect%3e%3cpath d='M681.78 260.62L689.87 250.69 701.33 256.41 709.42 246.48 720.88 252.19 728.97 242.26 740.43 247.97' stroke='%23e73635' stroke-width='1' stroke-dasharray='4%2c 4'%3e%3c/path%3e%3cpath d='M218.67 657.16 L244.13 579.16L287.2425569600777 674.0025569600778z' fill='%23d3b714'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1000'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cpattern x='0' y='0' width='216' height='6' patternUnits='userSpaceOnUse' id='SvgjsPattern1002'%3e%3crect width='216' height='3' x='0' y='0' fill='%23e73635'%3e%3c/rect%3e%3crect width='216' height='3' x='0' y='3' fill='rgba(0%2c 0%2c 0%2c 0)'%3e%3c/rect%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath1001'%3e%3ccircle r='54' cx='820.5' cy='250.65'%3e%3c/circle%3e%3c/clipPath%3e%3cpattern x='0' y='0' width='6.52' height='6.52' patternUnits='userSpaceOnUse' id='SvgjsPattern1004'%3e%3cpath d='M3.26 1L3.26 5.52M1 3.26L5.52 3.26' stroke='%23037b0b' fill='none' stroke-width='1.02'%3e%3c/path%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath1003'%3e%3ccircle r='71.72' cx='1329.58' cy='470.25'%3e%3c/circle%3e%3c/clipPath%3e%3cpattern x='0' y='0' width='6' height='6' patternUnits='userSpaceOnUse' id='SvgjsPattern1006'%3e%3cpath d='M3 1L3 5M1 3L5 3' stroke='%23e73635' fill='none' stroke-width='1.17'%3e%3c/path%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath1005'%3e%3ccircle r='15' cx='1029.98' cy='71.33'%3e%3c/circle%3e%3c/clipPath%3e%3cpattern x='0' y='0' width='6' height='6' patternUnits='userSpaceOnUse' id='SvgjsPattern1008'%3e%3cpath d='M3 1L3 5M1 3L5 3' stroke='%23d3b714' fill='none' stroke-width='1.06'%3e%3c/path%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath1007'%3e%3ccircle r='42' cx='151.47' cy='122.93'%3e%3c/circle%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e");
-  }
 
   /* .logo {
     font-family: "Cedarville Cursive", cursive;
   } */
+
+
+  header{
+    z-index: 100;
+  }
+
+  /* Toggle B */
+  #toggleB:checked ~ .dot {
+    transform: translateX(100%);
+    background-color: #48bb78;
+  }
 </style>
 
 <script>
+  let isTrue = true;
   const toggler = document.querySelector("#toggler");
+  const themeToggler = document.querySelector("#themeChanger");
+
   const nav = document.querySelector("#nav");
-  toggler.addEventListener("click", () => nav.classList.toggle("hidden"));
+
+  const toggle = () => {
+    const hidden = isTrue ? "hidden" : "auto";
+    document.body.setAttribute("style", `overflow:${hidden};`);
+    nav.classList.toggle("hidden");
+    isTrue = !isTrue;
+  };
+
+  toggler.addEventListener("click", toggle);
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  if (theme === "light") {
+    document.body.classList.remove("dark");
+    themeToggler.innerHTML =  ` <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />`
+  } else {
+    document.body.classList.add("dark");
+themeToggler.innerHTML =`<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />`
+    
+  }
+
+  window.localStorage.setItem("theme", theme);
+
+  const handleToggleClick = () => {
+    const element = document.body;
+    element.classList.toggle("dark");
+
+    const isDark = element.classList.contains("dark");
+
+    if(isDark) {
+themeToggler.innerHTML =`<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />`
+
+    }else{
+    themeToggler.innerHTML =  ` <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />`
+
+    }
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+  themeToggler.addEventListener("click", handleToggleClick);
 </script>

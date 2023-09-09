@@ -1,46 +1,32 @@
 ---
-import P from "../layouts/P.astro";
-import SkillSet from "./SkillSet.astro";
-import StillHere from "./StillHere.astro";
-import Timeline from "./Timeline.astro";
+
+import Photo from "../../assets/photo.png";
+
+
 ---
 
-<div class='z-10  flex gap-5 flex-col lg:tracking-widest leading-loose'  >
-    <P>Hello, I'm  web developer based in <span class="underline decoration-yellow-300">Vyara, Gujarat</span>.With knowledge of HTML, CSS, JavaScript, and cool frameworks like React and Node.js, I have the power to turn ideas into truly remarkable digital experiences.</P>
-          <P>
-           When I'm not conjuring code, you'll find me embarking on thrilling adventures in the realms of anime, diving deep into the mysteries of science, time-traveling through history, and staying up-to-date with the latest tech trends.  Additionally, I have a deep love for nature, enjoy hiking, and wandering to new places.
-        </P>
-        <div class="pt-10"  >
+<div
+  class='md:w-96   md:ml-auto lg:mx-auto h-screen md:h-[60vh] lg:h-screen sticky  p-5   rounded-xl text-gray-800 dark:text-gray-400 overflow-hidden group hover:shadow-2xl motion-safe:transition-all motion-safe:duration-700'
+  data-scroll
+  data-scroll-sticky
+  data-scroll-target='body'>
+  <figure
+    class='relative m-0 mx-auto rounded-full outline outline-offset-4 outline-sky-500 motion-safe:before:transition-all motion-safe:transform-gpu motion-safe:before:duration-500 before:origin-center group-hover:outline-sky-400'>
+    <img
+      class='rounded-full block max-w-full bg-sky-500 object-cover z-10 relative bg'
+      src={Photo}
+      alt='Avatar'
+    />
+  </figure>
+  <header
+    class='motion-safe:translate-y-4 motion-safe:transition-transform motion-safe:transform-gpu motion-safe:duration-500'>
+    <h3 class='font-semibold text-3xl text-center text-sky-500 mt-6 relative'>
+      Snehal Chaudhari
+    </h3>
+    <p class='mx-auto text-center'>👨‍💻 Web Developer | 🎌 Otaku</p>
+  </header>
 
-        </div>
-        <Timeline/>
-           <div class="pt-10">
-
-            <SkillSet/>
-        </div>
- <StillHere/>
-   <P>
-        I'm passionate about making a positive impact through my work. I believe
-        that every project is an opportunity for personal growth and learning.
-        Staying updated with the latest trends and technologies in the web
-        development industry is a priority for me, ensuring that I can deliver
-        the best solutions.
-    </P>
-    <P>
-        If you're looking for a dedicated, innovative, and enthusiastic web
-        developer to bring your ideas to life, I'm here to assist you. Let's
-        work together and create extraordinary digital experiences.
-    </P>
-    
-</div>
-
- <section class="h-screen flex items-center justify-center dark:text-white" >
-    <div class="container px-5 mx-auto">
-        <P>Damn  </P>
-        <P>You really</P>
-        <P>read all</P>
-
-         <ul class='flex justify-center w-fit space-x-4 text-sky-500 relative'>
+  <ul class='flex justify-center space-x-4 text-sky-500 relative'>
     <li
       class='motion-safe:translate-y-[50px] motion-safe:delay-100 motion-safe:transition'>
       <a
@@ -48,7 +34,6 @@ import Timeline from "./Timeline.astro";
         target='_blank'
         rel='noopener noreferrer'
         aria-label='Visit me on Github'>
-        Visit Github
         <svg
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 496 512'
@@ -66,7 +51,6 @@ import Timeline from "./Timeline.astro";
          target='_blank'
         rel='noopener noreferrer'
       class='' aria-label='Visit me on Instagram'>
-      Visit Instagram
         <svg
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 448 512'
@@ -81,7 +65,6 @@ import Timeline from "./Timeline.astro";
     <li
       class='motion-safe:translate-y-[50px] motion-safe:delay-300 motion-safe:transition'>
       <a href='mailto:snehal1380@gmail.com' class='' aria-label='Send me a Email'>
-        Mail me
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
 </svg>
@@ -90,22 +73,10 @@ import Timeline from "./Timeline.astro";
       </a>
     </li>
   </ul>
-    </div>
-  </section>
+</div>
 
-
-
-
-
-
-   <style>
-    a{
-        display: flex;
-        justify-content: space-evenly;
-        gap:5;
-        @apply dark:bg-gray-600 dark:hover:bg-gray-800 px-5 py-3 rounded-2xl
-    }
-    a svg{
-        margin-left: 10px;
-    }
-   </style>
+<style>
+  .bg {
+    background: url("../../assets/bg.svg");
+  }
+</style>

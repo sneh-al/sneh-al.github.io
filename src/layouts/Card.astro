@@ -3,8 +3,14 @@ const { href, title, body, homepage, topics, image } = Astro.props;
 import ExternalSvg from "../assets/external.svg";
 ---
 
-<li class='border-2 border-rose-500 shadow-3xl shadow-white'>
-  <div class='bg-[#0E2A47] rounded-lg md:flex gap-5'>
+
+
+
+
+
+
+<li class='border-2 border-rose-500 shadow-3xl shadow-white' >
+  <div class='bg-[#0E2A47] rounded-lg md:flex gap-5 bg-opacity-80'>
     <img
       src={image ||
         "https://images.unsplash.com/photo-1593642532744-d377ab507dc8"}
