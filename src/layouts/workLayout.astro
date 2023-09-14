@@ -3,6 +3,13 @@ const { title } = Astro.props;
 ---
 
 <section>
-    <h1 class='text-4xl md:text-4xl'>{title}</h1>
+<div class="lg:max-w-6xl m-auto  p-5" data-scroll data-scroll-speed="1.5">
+
+    <h1 class='text-4xl md:text-6xl lg:text-7xl py-11 text-white'
+    data-scroll
+    data-scroll-direction="horizontal"
+    data-scroll-speed="-2"
+    >{title}</h1>
     <slot />
+</div>
 </section>

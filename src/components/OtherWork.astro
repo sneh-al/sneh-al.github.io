@@ -6,10 +6,10 @@ const repos = await Astro.glob("../content/other/*.md");
 
 <section>
   <WorkLayout title='Other Work'>
-    <ul class='grid gap-5'>
+        <ul class='grid gap-5 grid-cols-1 md:grid-cols-2'>
+
       {
         repos.map((repo) => (
-          <li>
             <Card
               title={repo.frontmatter.title}
               href={repo.frontmatter.github}
@@ -18,7 +18,6 @@ const repos = await Astro.glob("../content/other/*.md");
               topics={repo.frontmatter.tags}
               image={repo.frontmatter.image}
             />
-          </li>
         ))
       }
     </ul>

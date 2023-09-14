@@ -1,18 +1,27 @@
 ---
 import NaLinks from "../components/NaLinks.astro";
+import StillHere from "../components/StillHere.astro";
 import Layout from "./Layout.astro";
 const { title, href, text, pageTitle } = Astro.props;
 ---
 
 <Layout title={title}>
-    <main class='max-w-6xl m-auto p-5 pb-10'  >
-           
-        <h2 class='font-bold w-full text-5xl md:text-7xl my-10 text-yellow-300  flex items-end text-left h-[20vh]' data-scroll  data-scroll data-scroll-repeat data-scroll-speed="2"  >
-       
-            
-               {pageTitle}
-    
-        </h2>
-        <slot />
-    </main>
+  <main id='intro' class='flex flex-col'>
+    <!-- <header
+      class='py-24 rounded-b-[5rem] shadow-slate-950 shadow-2xl border-b-2 border-slate-950 w-full bg-black flex items-center'
+        data-scroll
+        data-scroll-repeat
+      data-scroll-call='toggleBackToTop'>
+      <h2
+      
+        class='font-bold w-full text-5xl md:text-7xl text-green-500 flex items-end text-left p-5 lg:max-w-7xl m-auto'>
+        {pageTitle}
+      </h2>
+    </header> -->
+
+    <div class='pt-24 md:pt-44'>
+      <slot />
+    </div>
+  </main>
+  <StillHere />
 </Layout>

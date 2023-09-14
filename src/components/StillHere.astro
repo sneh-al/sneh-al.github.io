@@ -1,187 +1,93 @@
-<section  class='relative py-60  '>
-  <h2
-    class='dark:text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -skew-x-12 whitespace-nowrap text-3xl  md:text-6xl sm:text-9xl font-extrabold py-4'>
-    <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='3'
-      >S</span
-    >
-    <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='2'
-      >t</span
-    >
-    <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='3'
-      >i</span
-    >
-    <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='2'
-      >l</span
-    >
-    <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='3'
-      >l</span
-    >
-      <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='3'
-      >{" "}</span
-    >
-    <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='2'
-      >H</span
-    >
-    <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='3'
-      >e</span
-    >
-    <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='2'
-      >r</span
-    >
-        <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='2'
-      >e</span
-    >
-  </h2>
- <p
-   class='inline-block text-5xl transform rotate-6 skew-x-12'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-direction="horizontal"
+---
+import ProfileCard from "./Index/ProfileCard.astro";
+const classOfParagraph =
+  "text-xl md:text-4xl lg:text-5xl  text-semibold  bg-gradient-to-br  from-red-900  via-rose-900 to-violet-900  dark:from-purple-200 dark:via-green-300 dark:to-rose-200 bg-clip-text text-transparent whitespace-nowrap";
+---
+<!-- <section
+id="services"
+  class='relative p-10  h-[80vh]  overflow-hidden w-full flex flex-col md:flex-row '>
+  <div class="md:w-1/2 h-fit md:h-full  bg-red-100 flex flex-col ml-auto">
+<h1 class="text-6xl">
+  <span>Snehal</span><br/>
+  <span>Chaudhari</span><br/>
+</h1>
 
-      data-scroll-speed='-20'
-      
- >⛵🌊</p>
-</section>
-<section id='services' class='relative py-60  '>
-
-     <div class='transform rotate-6 skew-x-12 '>
-    <div
-      data-scroll
-      data-scroll-direction='horizontal'
-      data-scroll-speed='20'
-      data-scroll-target='#services'>
-      <span
-        class='text-3xl sm:text-4xl md:text-6xl 2xl:text-7xl bg-green-400 p-5 whitespace-nowrap'
-        >Want to know more — Who am i? — Read more</span
-      >
-    </div>
   </div>
-  <div class='transform -rotate-6 -skew-x-12 mt-40'>
-    <div
-      data-scroll
-      data-scroll-direction='horizontal'
-      data-scroll-speed='-20'
-      data-scroll-target='#services'>
-      <span
-        class='text-3xl sm:text-4xl md:text-6xl 2xl:text-7xl bg-green-400 p-5 whitespace-nowrap'
-        >
-        <a href="http://" target="_blank" rel="noopener noreferrer" class="underline decoration-rose-400 hover:text-rose-400 hover:decoration-black"> Mail me</a>
-        - 
-        <a href="http://" target="_blank" rel="noopener noreferrer" class="underline decoration-rose-400 hover:text-rose-400 hover:decoration-black">Vist Instagram</a>
-         - <a href="http://" target="_blank" rel="noopener noreferrer" class="underline decoration-rose-400 hover:text-rose-400 hover:decoration-black">View on github</a>
-         </span
-      >
-    </div>
-  </div>
-</section>
-<section  class='relative py-60  '>
-  <h2
-    class='dark:text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -skew-x-12 whitespace-nowrap text-3xl  md:text-6xl sm:text-9xl font-extrabold py-4'>
-    <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='3'
-      >K</span
-    >
-    <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='2'
-      >e</span
-    >
-    <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='3'
-      >e</span
-    >
-    <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='2'
-      >p</span
-    >
-  
-      <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='3'
-      >{" "}</span
-    >
-      <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='3'
-      >S</span
-    >
-    <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='2'
-      >r</span
-    >
-    <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='3'
-      >l</span
-    >
-    <span
-      class='inline-block'
-      data-scroll
-      data-scroll-repeat
-      data-scroll-speed='2'
-      >l</span
-    >
-    
-  </h2>
+</section> -->
 
+<section id="services"
+  class='relative p-10 h-screen md:h-[80vh]  overflow-hidden w-full  '>
+   <div class="w-full md:w-1/2 h-1/2 md:h-full mb-0    flex items-center p-5 ">
+
+<h1 class="text-5xl md:text-7xl md:m-auto">
+  <span>Snehal</span><br/>
+  <span>Chaudhari</span><br/>
+</h1>
+ </div>
+   <div class="w-full md:w-1/2 h-1/2 md:h-full  bg-black flex p-5 ">
+    <ul class="mt-auto ml-auto md:mr-auto text-2xl ">
+   { [{name:"Github",link:"https://github.com/sneh-al"},{name:"Instagram",link:"https://www.instagram.com/sneh.al/"},{name:"Mail me",link:'mailto:snehal1380@gmail.com'}].map((item,i) =>{
+return <li
+   >
+    <a href={item.link} target="_blank" rel="noopener noreferrer"
+   
+    >{item.name}</a>
+    </li>
+
+   })}
+  </ul>
+</div>
 </section>
+
+<style>
+ 
+
+  li a{
+    @apply p-4 text-left text-xl  hover:bg-gradient-to-l rounded-2xl from-rose-300 to-purple-400   w-full  text-blue-700 dark:text-red-500 hover:text-white hover:scale-105 gap-5 flex items-center justify-center transition duration-300 ease-in-out
+  }
+
+  #services {
+    @apply rounded-t-2xl flex  justify-evenly flex-col  md:flex-row text-white;
+ animation: myAnim 60s ease normal infinite;
+background-color: #000000;
+background-image: radial-gradient(rgba(255,255,255,0.1) 2px, #000000 2px);
+background-size: 40px 40px;
+  width: 100%;
+
+
+}
+
+@keyframes myAnim {
+	0% {
+		background-position: 25% 0%;
+	}
+  25%{
+		background-position: 25% 75%;
+
+  }
+
+	50% {
+		background-position: 50% 100%;
+	}
+   25%{
+		background-position: 75% 25%;
+
+  }
+  100% {
+		background-position: 25% 0%;
+	}
+}
+
+/* Fallback if the operatring system prefers reduced motion*/
+@media (prefers-reduced-motion) {
+  #services {
+    animation: scroll 800s linear infinite;
+  }
+}
+
+@media (min-width: 670px) {
+  .title {
+    font-size: 5rem;
+  }
+}
+</style>

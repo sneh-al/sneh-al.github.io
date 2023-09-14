@@ -3,13 +3,6 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE } from "../../config";
 
-export interface Props {
-  title?: string;
-  author?: string;
-  description?: string;
-  ogImage?: string;
-  canonicalURL?: string;
-}
 const {
   title = SITE.title,
   author = SITE.author,
@@ -20,50 +13,51 @@ const {
 
 <!DOCTYPE html>
 <html lang='en'>
-  <!-- <link rel="canonical" href={canonicalURL} /> -->
-  <meta name='generator' content={Astro.generator} />
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='Astro description' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/logo.png' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
 
-  <!-- General Meta Tags -->
-  <title>{title}</title>
-  <meta name='title' content={title} />
-  <meta name='description' content={description} />
-  <meta name='author' content={author} />
-  <link rel='sitemap' href='/sitemap-index.xml' />
+    <!-- <link rel="canonical" href={canonicalURL} /> -->
+    <meta name='generator' content={Astro.generator} />
 
-  <!-- Open Graph / Facebook -->
-  <meta property='og:title' content={title} />
-  <meta property='og:description' content={description} />
-  <!-- <meta property="og:url" content={canonicalURL} />
+    <!-- General Meta Tags -->
+    <title>{title}</title>
+    <meta name='title' content={title} />
+    <meta name='description' content={description} />
+    <meta name='author' content={author} />
+    <link rel='sitemap' href='/sitemap-index.xml' />
+
+    <!-- Open Graph / Facebook -->
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <!-- <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={socialImageURL} /> -->
 
-  <!-- Twitter -->
-  <meta property='twitter:card' content='summary_large_image' />
-  <!-- <meta property="twitter:url" content={canonicalURL} /> -->
-  <meta property='twitter:title' content={title} />
-  <meta property='twitter:description' content={description} />
-  <!-- <meta property="twitter:image" content={socialImageURL} /> -->
+    <!-- Twitter -->
+    <meta property='twitter:card' content='summary_large_image' />
+    <!-- <meta property="twitter:url" content={canonicalURL} /> -->
+    <meta property='twitter:title' content={title} />
+    <meta property='twitter:description' content={description} />
+    <!-- <meta property="twitter:image" content={socialImageURL} /> -->
 
-  <meta charset='UTF-8' />
-  <meta name='description' content='Astro description' />
-  <meta name='viewport' content='width=device-width' />
-  <link rel='icon' type='image/svg+xml' href='/logo.png' />
-  <meta name='generator' content={Astro.generator} />
-  <title>{title}</title>
-  <link rel='stylesheet' href='https://unpkg.com/aos@next/dist/aos.css' />
+<!-- locomotive scroll css -->
+<link rel="stylesheet" href="/styles/locomotiveScroll.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- javascript -->
+  </head>
 
-  <body class='flex flex-col justify-between dark  over' data-scroll-container>
-   <div class=" dark:bg-black bg-rose-50">
-    <div id="left"></div>
-<div id="right"></div>
-<div id="top"></div>
-<div id="bottom"></div>
-     <Header />
-    <main class='z-20  max-w-7xl lg:m-auto ' >
-
-      <!-- Your layout content goes here -->
-      <slot />
-  </main>
-   </div>
+  <body class='flex flex-col justify-between dark over ' >
+    <div class='main' data-scroll-container>
+      <Header />
+      <main class='z-20 w-full lg:m-auto relative leading-loose'>
+        <!-- Your layout content goes here -->
+        <slot />
+      </main>
+    </div>
   </body>
 </html>
 
@@ -77,154 +71,51 @@ const {
   body {
     font-family: var(--font-1);
 
-    background-size: cover;
-    background-attachment: fixed;
-    /* background: url("../assets/newbg.svg"); */
+   
   }
+  .main {
+background-color: #000000;
+background-image: radial-gradient(rgba(255,255,255,0.1) 2px, #000000 2px);
+background-size: 40px 40px;
+}
+   @keyframes scroll {
+    0%{
+    background-position: -50px -50px;
 
+    }
+     10%{
+    background-position: -20px -20px;
 
+    }
+        40%{
+    background-position: -10px -10px;
 
-  /*! locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
-  html.has-scroll-smooth {
-    overflow: hidden;
-  }
+    }
+            50%{
+    background-position: 0px 0px;
 
-  html.has-scroll-dragging {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
+    }
+               80%{
+    background-position: 20px 20px;
 
-  .has-scroll-smooth body {
-    overflow: hidden;
+    }
+  100% {
+    background-position: 50px 50px;
   }
-
-  .has-scroll-smooth [data-scroll-container] {
-    min-height: 100vh;
-  }
-
-  [data-scroll-direction="horizontal"] [data-scroll-container] {
-    height: 100vh;
-    display: inline-block;
-    white-space: nowrap;
-  }
-
-  [data-scroll-direction="horizontal"] [data-scroll-section] {
-    display: inline-block;
-    vertical-align: top;
-    white-space: nowrap;
-    height: 100%;
-  }
-
-  .c-scrollbar {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 11px;
-    height: 100%;
-    transform-origin: center right;
-    transition: transform 0.3s, opacity 0.3s;
-    opacity: 0;
-  }
-  .c-scrollbar:hover {
-    transform: scaleX(1.45);
-  }
-  .c-scrollbar:hover,
-  .has-scroll-scrolling .c-scrollbar,
-  .has-scroll-dragging .c-scrollbar {
-    opacity: 1;
-  }
-  [data-scroll-direction="horizontal"] .c-scrollbar {
-    width: 100%;
-    height: 10px;
-    top: auto;
-    bottom: 0;
-    transform: scaleY(1);
-  }
-  [data-scroll-direction="horizontal"] .c-scrollbar:hover {
-    transform: scaleY(1.3);
-  }
-
-  .c-scrollbar_thumb {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: black;
-    opacity: 0.5;
-    width: 7px;
-    border-radius: 10px;
-    margin: 2px;
-    cursor: -webkit-grab;
-    cursor: grab;
-  }
-  .has-scroll-dragging .c-scrollbar_thumb {
-    cursor: -webkit-grabbing;
-    cursor: grabbing;
-  }
-  [data-scroll-direction="horizontal"] .c-scrollbar_thumb {
-    right: auto;
-    bottom: 0;
-  }
-#top, #bottom, #left, #right {
-  @apply bg-yellow-950 dark:bg-yellow-100 ;
-	position: fixed;
-  z-index: 500;
-	}
-	#left, #right {
-		top: 0; bottom: 0;
-		width: 10px;
-		}
-		#left { left: 0; }
-		#right { right: 0; }
-		
-	#top, #bottom {
-		left: 0; right: 0;
-		height: 10px;
-		}
-		#top { top: 0; }
-		#bottom { bottom: 0; }
- 
-
+}
+  
 </style>
 
 <script>
-  const theme = localStorage.getItem("sTheme");
-  if (theme === "dark") {
-    document.body.classList.add(theme);
-  }
-</script>
-
-
-
-<script is:inline>
-const theme = (() => {
-  if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-    return localStorage.getItem("theme");
-  }
-  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    return "dark";
-  }
-  return "light";
-})();
-
-if (theme === "light") {
-  document.body.classList.remove("dark");
-} else {
-  document.body.classList.add("dark");
-}
-
-  window.localStorage.setItem("theme", theme);
-</script>
-
-
-<script >
-import LocomotiveScroll from 'locomotive-scroll';
-
-  const scroll = new LocomotiveScroll({
+  import LocomotiveScroll from "locomotive-scroll";
+const scroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
   tablet: { smooth: true },
-  smartphone: { smooth: true }
+  smartphone: { smooth: true },
+  reloadOnContextChange: true,
+  repeat: true,
 });
+
 </script>
+
