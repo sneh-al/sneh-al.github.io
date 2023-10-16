@@ -1,9 +1,9 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
-console.log(currentPath,pathname)
 const activeStyle = "underline underline-offset-8 decoration-rose-500 ";
 ---
+
 
 <header class='grid top-0 left-0 grid-cols-2 z-[5000] w-full  bg-black' data-scroll data-scroll-speed="">
     <a
@@ -39,12 +39,12 @@ const activeStyle = "underline underline-offset-8 decoration-rose-500 ";
           <a href='/' class={currentPath === "" ? activeStyle : ""}>Home</a>
         </li>
         <li class='p-5 md:p-0 '>
-          <a href='/me' class={currentPath === "me" ? activeStyle : ""}
+          <a href='/me' class={currentPath === "me" || "me/" ? activeStyle : ""}
             >Get to Know Me</a
           >
         </li>
         <li class='p-5 md:p-0'>
-          <a href='/stuff' class={currentPath === "stuff" ? activeStyle : ""}
+          <a href='/stuff' class={currentPath === "stuff" || "stuff/"  ? activeStyle : ""}
             >Check out my Stuff</a
           >
         </li>
