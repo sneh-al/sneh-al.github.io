@@ -3,16 +3,24 @@ import P from "../layouts/P.astro";
 import Page from "../layouts/Page.astro";
 ---
 
-<section class='skills'>
+<section class='skills'
+ data-scroll
+        data-scroll
+        data-scroll-repeat
+        data-scroll-speed='1'
+  >
   <div class='lg:max-w-6xl m-auto py-44'>
     <header>
+
       <h1
         data-scroll
         data-scroll
         data-scroll-repeat
         data-scroll-speed='-.2'
         data-scroll-direction='horizontal'
-        class='dark:text-white text-5xl md:text-7xl border-l-2 text-green-500 p-5 border-green-500'>
+        class='dark:text-white text-5xl flex items-center md:text-7xl border-l-2 text-green-500 p-5 border-green-500'>
+        
+        <img src="/knowledge.svg" alt="" srcset="">
         Skills
       </h1>
     </header>

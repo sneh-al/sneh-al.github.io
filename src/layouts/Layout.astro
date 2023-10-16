@@ -59,11 +59,9 @@ const {
 </html>
 
 <style is:global>
-  @import url("https://fonts.googleapis.com/css2?family=Caprasimo&family=IBM+Plex+Mono:wght@500&display=swap");
-  :root {
-    --font-1: "Caprasimo", cursive;
-    --font-2: sans-serif;
-    --font-3: "IBM Plex Mono";
+ @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caprasimo&display=swap'); :root {
+    --font-1: "Caprasimo", cursive,serif;
+    --font-2:'Architects Daughter', cursive;
   }
   body {
     font-family: var(--font-1);
@@ -74,6 +72,17 @@ const {
 background-color: #000000;
 background-image: radial-gradient(rgba(255,255,255,0.1) 2px, #000000 2px);
 background-size: 40px 40px;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--font-1);
+
+}
+
+p,li{
+  font-family: var(--font-2);
+  font-weight: 400;
+  font-style: italic;
 }
    @keyframes scroll {
     0%{

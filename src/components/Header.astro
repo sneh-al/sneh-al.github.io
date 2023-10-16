@@ -1,21 +1,20 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
+console.log(currentPath,pathname)
 const activeStyle = "underline underline-offset-8 decoration-rose-500 ";
 ---
 
-<header class='grid top-0 left-0 grid-cols-2 z-[5000] w-full p-3 bg-black' data-scroll data-scroll-speed="">
-  <div class='flex items-center p-5 pb-0'>
+<header class='grid top-0 left-0 grid-cols-2 z-[5000] w-full  bg-black' data-scroll data-scroll-speed="">
     <a
       href='/'
-      class='text-xl md:text-2xl lg:text-3xl bg-gradient-to-tr from-purple-400 to-rose-400 bg-clip-text text-transparent font-extrabold'
+      class='logo p-5 text-5xl  lg:text-7xl bg-gradient-to-tr from-purple-400 to-rose-400 bg-clip-text text-transparent font-extrabold '
       >Snehal</a
     >
-  </div>
 
   <nav class='flex w-full items-center flex-col md:flex-row relative'>
-    <div class='ml-auto  flex items-center justify-evenly gap-2 p-5 pb-0'>
-      <button id='toggler' class='md:hidden'>
+    <div class='ml-auto  flex items-center justify-evenly gap-2  pb-0'>
+      <button id='toggler' class='md:hidden p-5'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           id='bars'
@@ -34,7 +33,7 @@ const activeStyle = "underline underline-offset-8 decoration-rose-500 ";
 </svg> -->
       </button>
       <ol
-        class='hidden absolute md:static top-[100%] bg-black z-50 right-0 list-decimal md:gap-6 list-inside break-keep text-red-500  md:flex  flex-col md:flex-row w-full justify-center items-center '
+        class='p-5 hidden absolute md:static top-[100%] bg-black z-50 right-0 list-decimal md:gap-6 list-inside break-keep text-red-500  md:flex  flex-col md:flex-row w-full justify-center items-center '
         id='nav'>
         <li class='p-5 md:p-0'>
           <a href='/' class={currentPath === "" ? activeStyle : ""}>Home</a>
@@ -54,11 +53,12 @@ const activeStyle = "underline underline-offset-8 decoration-rose-500 ";
   </nav>
 </header>
 <style>
-  /* @import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap"); */
+  @import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
 
-  /* .logo {
+  .logo {
     font-family: "Cedarville Cursive", cursive;
-  } */
+    font-weight: 400;
+  }
 
   header {
     z-index: 100;
@@ -68,6 +68,10 @@ const activeStyle = "underline underline-offset-8 decoration-rose-500 ";
   #toggleB:checked ~ .dot {
     transform: translateX(100%);
     background-color: #48bb78;
+  }
+
+  li{
+    font-family: var(--font-1) !important;
   }
 </style>
 

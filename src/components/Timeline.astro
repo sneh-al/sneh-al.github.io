@@ -3,65 +3,73 @@ import P from "../layouts/P.astro";
 import TimelineLayout from "../layouts/TimelineLayout.astro";
 ---
 
-
-<TimelineLayout title="education">
- <li class='mb-10 ml-6'>
-          <div
-            class='absolute w-4 h-4 bg-white border-4 border-indigo-600 rounded-full -left-[0.6rem]'>
-          </div>
-          <p class='p-0 m-0 font-bold'>2015</p>
-          <div
-            data-scroll
-            data-scroll-repeat
-            data-scroll-speed='.1'
-            data-scroll-direction='horizontal'>
-            <P>Diploma In Computer Engineering,</P>
-            <p class='text-2xl'>Institute of diploma studies,</p>
-            <p class='font-semibold text-xl'>Nirma University</p>
-          </div>
-        </li>
-        <li class='mb-10 ml-6'>
-          <div
-            class='absolute w-4 h-4 bg-white border-4 border-indigo-600 rounded-full -left-[0.6rem]'>
-          </div>
-          <p class='p-0 m-0 font-bold'>2020</p>
-          <div
-            data-scroll
-            data-scroll-repeat
-            data-scroll-speed='.2'
-            data-scroll-direction='horizontal'>
-            <P>Bachelor's degree in Computer Engineering,</P>
-            <p class='text-2xl'>C.K. Pithawala College,</p>
-            <p class='font-semibold text-xl'>Gujrat technological university</p>
-          </div>
-        </li>
-</TimelineLayout>
-<TimelineLayout title="work">
+<TimelineLayout title='education' src="/graduaction.svg">
   <li class='mb-10 ml-6'>
-          <div
-            class='absolute w-4 h-4 bg-white border-4 border-indigo-600 rounded-full -left-[0.6rem]'>
-          </div>
-          <p class='p-0 m-0 font-bold'>2021 - 2022</p>
-          <div
-            data-scroll
-            data-scroll-repeat
-            data-scroll-speed='.3'
-            data-scroll-direction='horizontal'>
-            <P class='text-lg'>&lt;Reactjs devloper/&gt;</P>
-            <p class='text-3xl'>Sravadhi soluttion pvt ltd</p>
-            <p class='text-xl md:text-2xl'>
-              I completed a 3-month internship at Sravadhi, followed by a
-              7-month tenure with the company. During this time, I worked
-              extensively with Electron.js and React.js, gaining valuable
-              expertise in cross-platform desktop application development and
-              building interactive user interfaces. These experiences greatly
-              enriched my skill set in frameworks and deepened my understanding
-              of robust web application development.
-            </p>
-          </div>
-        </li>
-</TimelineLayout>
+    <div
+      class='absolute z-10 w-4 h-4 bg-white border-4 border-indigo-600 rounded-full -left-[0.6rem]'>
+    </div>
+    <p class='p-0 m-0 font-bold'>2015</p>
+    <div
+      data-scroll
+      data-scroll-repeat
+      data-scroll-speed='.1'
+      data-scroll-direction='horizontal'>
+      <h4  class="text-3xl md:text-5xl ">
+       Diploma In Computer Engineering,
+      </h4>
+      <p class='text-xl md:text-2xl'>Institute of diploma studies,</p>
+      <p class='font-semibold text-xl'>Nirma University</p>
+    </div>
 
+  </li>
+  <li class='mb-10 ml-6'>
+    <div
+      class='absolute w-4 h-4 bg-white border-4 border-indigo-600 rounded-full -left-[0.6rem]'>
+    </div>
+    <p class='p-0 m-0 font-bold'>2020</p>
+    <div
+      data-scroll
+      data-scroll-repeat
+      data-scroll-speed='.2'
+      data-scroll-direction='horizontal'>
+             <h4  class="text-3xl md:text-5xl ">
+
+       Bachelor's degree in Computer Engineering,
+      </h4>
+      <p class='text-2xl'>C. K. Pithawala College of Engineering and Technology,</p>
+      <p class='font-semibold text-xl'>Gujrat technological university</p>
+    </div>
+  </li>
+
+</TimelineLayout>
+<TimelineLayout title='work'  src="/work.svg">
+  <li class='mb-10 ml-6'>
+    <div
+      class='absolute animate-pulse transition-all duration-500 ease-in-out w-4 h-4 bg-white border-4 border-indigo-600 rounded-full -left-[0.6rem]'>
+      </div>
+    <p class='p-0 m-0 font-bold'>2021 - 2022</p>
+    <div
+      data-scroll
+      data-scroll-repeat
+      data-scroll-speed='.3'
+      data-scroll-direction='horizontal'>
+      <h4  class="text-3xl md:text-5xl ">
+      
+        
+        &lt;Reactjs devloper/&gt;</h4>
+      <p class='text-3xl'>Sravadhi soluttion pvt ltd</p>
+      <p class='text-xl md:text-2xl'>
+        I completed a 3-month internship at Sravadhi, followed by a 7-month
+        tenure with the company. During this time, I worked extensively with
+        Electron.js and React.js, gaining valuable expertise in cross-platform
+        desktop application development and building interactive user
+        interfaces. These experiences greatly enriched my skill set in
+        frameworks and deepened my understanding of robust web application
+        development.
+      </p>
+    </div>
+  </li>
+</TimelineLayout>
 
 <style>
   .timeline {
@@ -79,5 +87,9 @@ import TimelineLayout from "../layouts/TimelineLayout.astro";
       );
     background-size: 68px 68px;
     background-position: 0 0, 34px 34px;
+  }
+
+  h4{
+    @apply bg-gradient-to-br  from-red-900  via-rose-900 to-violet-900  dark:from-purple-200 dark:via-green-300 dark:to-rose-200 bg-clip-text text-transparent;
   }
 </style>
