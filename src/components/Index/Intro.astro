@@ -4,12 +4,13 @@ import Links from "./Links.astro";
 ---
 
 <div
-  data-scroll
-  data-scroll-speed='5'
-  class='bg-gray-900 h-screen  md:h-auto  lg:bg-transparent bg-opacity-90 lg:w-3/4 flex-col p-5  z-1 flex  lg:tracking-widest leading-loose '>
+ 
+  class='bg-gray-900 p-5 py-14 lg:pt-24 lg:pb-0  lg:bg-transparent bg-opacity-90 lg:w-3/4 flex-col  z-1 flex  lg:tracking-widest leading-loose '>
   <h1
-    class='font-bold w-full flex md:flex-row md:items-end text-4xl md:text-8xl lg:text-8xl text-black dark:text-white'>
-    I'm {" "}<span class='underlined underline-clip'>Snehal,</span>
+    data-scroll
+    class='font-bold w-full bg-gradient-to-br  from-red-900  via-rose-900 to-violet-900  dark:from-purple-200 dark:via-green-300 dark:to-rose-200 bg-clip-text text-transparent
+    flex  gap-2 lg:gap-5 md:gap-4 md:flex-row md:items-end text-4xl md:text-8xl lg:text-8xl'>
+    I'm <span class='underlined underline-clip bg-gradient-to-br  from-red-900  via-rose-900 to-violet-900  dark:from-purple-200 dark:via-green-300 dark:to-rose-200 bg-clip-text  '>{" "} Snehal,</span>
   </h1>
   <P>
     your friendly <span
@@ -22,7 +23,9 @@ import Links from "./Links.astro";
       class='underline decoration-yellow-300 hover:bg-gradient-to-tr from-purple-400 to-rose-400 bg-clip-text hover:text-transparent font-extrabold transition duration-300 ease-in-out origin-left'>
       Comp-Engu</acronym
     >
-    no Mi devil fruit and the Ingenius Haki, I am passionate about creating captivating
+    no Mi devil fruit
+    <!-- <img src="/fruit.png" width="50" height="50" alt="fruit" class="inline"> -->
+    and the Ingenius Haki, I am passionate about creating captivating
     websites and building cool web applications.
   </P>
   <Links />

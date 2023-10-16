@@ -1,23 +1,31 @@
 ---
 
 import Photo from "../../assets/photo.png";
+import bg from "../../assets/bg.svg";
 
 
 ---
 
 <div
-class='md:w-96   md:ml-auto lg:mx-auto  lg:h-screen sticky  p-5   rounded-xl text-gray-800 dark:text-gray-400 overflow-hidden group hover:shadow-2xl motion-safe:transition-all motion-safe:duration-700'
+class='md:w-96   md:ml-auto lg:mx-auto lg:h-screen  sticky  p-5   rounded-xl text-gray-800 dark:text-gray-400 overflow-hidden group hover:shadow-2xl motion-safe:transition-all motion-safe:duration-700'
   data-scroll
   data-scroll-sticky
   data-scroll-target="body"
   >
   <figure
-    class='relative m-0 w-fit mx-auto rounded-full outline outline-offset-4 outline-sky-700 motion-safe:before:transition-all motion-safe:transform-gpu motion-safe:before:duration-700 before:origin-center group-hover:outline-sky-400'>
+    class='relative overflow-hidden m-0 w-fit mx-auto rounded-full outline outline-offset-4 outline-sky-700 motion-safe:before:transition-all motion-safe:transform-gpu motion-safe:before:duration-700 before:origin-center group-hover:outline-sky-400'>
     <img
-      class='rounded-full block h-96 w-96   object-contain z-10 relative bg'
+       data-scroll
+  data-scroll-speed='-.5'
+      class='rounded-full block h-96 w-96   object-contain z-10 relative '
       src={Photo}
       alt='Avatar'
     />
+    <img src={bg} class="  absolute top-0 left-0 h-full" 
+     data-scroll
+  data-scroll-speed='.5'
+    
+    alt="">
   </figure>
   <header
     class='motion-safe:translate-y-4 motion-safe:transition-transform motion-safe:transform-gpu motion-safe:duration-700'>
@@ -26,8 +34,12 @@ class='md:w-96   md:ml-auto lg:mx-auto  lg:h-screen sticky  p-5   rounded-xl tex
 
       Snehal Chaudhari
     </h3>
-    <p class='mx-auto text-center text-sky-700'> Web Developer 👨‍💻 Otaku</p>
-      <ul class='flex justify-center text-sky-700 relative mt-5 gap-3 '>
+    <div class='mx-auto text-center text-sky-700'> 
+      <p class="inline font-bold text-xl ">Web Developer </p>
+      👨‍💻 
+    <p class="inline font-bold text-xl ">Otaku</p>
+    </div>
+      <ul class='flex justify-center text-red-500 relative mt-5 gap-3 '>
     <li
       class=''>
       <a
@@ -65,7 +77,7 @@ class='md:w-96   md:ml-auto lg:mx-auto  lg:h-screen sticky  p-5   rounded-xl tex
     </li>
     <li
       class=''>
-      <a href=  class='' aria-label='Send me a Email'>
+      <a href="mailto:snehsl1380@gmail.com"  class='' aria-label='Send me a Email'>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
 </svg>
