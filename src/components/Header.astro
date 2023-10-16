@@ -3,8 +3,7 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
 const activeStyle = "underline underline-offset-8 decoration-rose-500 ";
 
-const me = "me/" || "me";
-const stuff ="stuff/" || "stuff" 
+
 
 ---
 
@@ -43,12 +42,12 @@ const stuff ="stuff/" || "stuff"
           <a href='/' class={currentPath === "" ? activeStyle : ""}>Home</a>
         </li>
         <li class='p-5 md:p-0 '>
-          <a href='/me' class={currentPath === me ? activeStyle : ""}
+          <a href='/me' class={currentPath === "me/" ? activeStyle : ""}
             >Get to Know Me</a
           >
         </li>
         <li class='p-5 md:p-0'>
-          <a href='/stuff' class={currentPath === stuff  ? activeStyle : ""}
+          <a href='/stuff' class={currentPath === "stuff/"  ? activeStyle : ""}
             >Check out my Stuff</a
           >
         </li>
@@ -81,7 +80,6 @@ const stuff ="stuff/" || "stuff"
 
 
 <script>
-  console.log(window.location.pathname)
   const toggler = document.getElementById("toggler")
   const navbar = document.getElementById("nav")
 const showMenu =()=>{
