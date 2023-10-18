@@ -7,9 +7,10 @@ const { title, href, text, pageTitle } = Astro.props;
 
 <Layout title={title}>
   <main id='intro' class='flex flex-col pt-44'>
-  
+    <a id="top"></a>
 
       <slot />
   </main>
+
   <StillHere />
 </Layout>
