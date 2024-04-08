@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import { works } from "consts";
 import Work from "./ui/work.astro";
 ---
@@ -12,7 +11,7 @@ import Work from "./ui/work.astro";
   </header>
   <div class="bg-black bg-dot z-10  max-w-6xl m-auto py-32  flex flex-col md:flex-row gap-6   p-5">
     {
-      works.map((work, i) =><Work title={work.title} url={work.url} image={work.image} info={work.info} tags={work.tags} /> )
+      works.map((work) =><Work title={work.title} url={work.url} image={work.image} info={work.info} tags={work.tags} /> )
     }
   </div>
 </section>
