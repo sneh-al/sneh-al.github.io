@@ -1,0 +1,132 @@
+---
+import { Image } from "astro:assets";
+import { socialLinks } from "consts";
+import Photo from "assets/photo.png";
+import bg from "assets/bg.svg";
+import Wave from "assets/wave.jpg"
+import messImages from "assets/mess.png";
+import heartImages from "assets/heart.png";
+import flashImages from "assets/flash.png";
+---
+
+<section class=" py-14  bg-dot">
+  <article
+    class="p-5 max-w-5xl flex flex-col justify-center gap-6 items-center m-auto"
+  >
+    <h1
+      class="yo bg-black  w-full text-center text-highlight  text-4xl md:text-7xl lg:text-9xl border-[1px] border-primary  py-6 rounded-[60px] tracking-wide text-nowrap flex items-center justify-center"
+      id="greetings"
+    >
+      <span class=" animate-wiggle-more animate-twice " id="wave">👋</span>
+      <span class=" animate-fade-right  transition-all duration-500 ease-linear word "  id="johar">Johar</span>
+      <span class=" animate-fade-left hidden transition-all duration-500 ease-linear word" id="sup">YO 'SUP?</span>
+      
+    </h1>
+    <div class="grid gap-6 grid-cols-12 w- ">
+        <!-- intro -->
+      <div
+        class=" bg-accent col-span-12 md:col-span-8 md:aspect-video rounded-[5rem] rounded-tr-none flex items-end justify-center  relative overflow-hidden" >
+        <Image src={messImages} alt="shapes" class="absolute opacity-30 top-0 left-0 mix-blend-multiply" />
+          <Image src={heartImages} alt="shapes" class="absolute opacity-30  bottom-10  right-0 " />
+
+        <div class=" text-xl md:text-2xl flex bg-black bg-opacity-90 backdrop-blur   p-5  h-full w-full ">
+         
+          <p class=" text-highlight py-5 max-w-sm mx-auto mt-auto">
+           I'm &lt;Snehal/&gt; <span class="font-thin text-base text-primary">/Sne-hal/<button aria-label="pronounce name" class="magic-hover magic-hover__square" id="speak"
+                >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="transparent"
+                  class="w-4 h-4 rounded-full "
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    fill="currentColor"
+                    d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+                  ></path>
+                </svg>
+              </button></span>,<br />
+            <span class="text-secondary">//an otaku and engineer from Vyara.</span>
+          </p>
+        </div>
+      </div>
+      <!-- DP -->
+      <div
+        class=" bg-accent/10 border-highlight border-2  col-span-12 md:col-span-4 rounded-[5rem] md:rounded-bl-[15rem] md:rounded-tr-[15rem] relative overflow-hidden"
+      >
+        <figure
+          class="h-full overflow-hidden   ">
+          <Image
+            class="object-contain  object-bottom z-10 relativer h-full"
+            src={Photo}
+            alt="snehal"
+            quality="mid"
+          />
+          <Image quality="low" src={bg} class="absolute top-0 left-0 w-full h-full -z-10" alt="" />
+        </figure>
+       
+      </div>
+      <!-- eyes -->
+      <div class="hidden md:flex items-center bg-accent   col-span-12  md:col-span-4  rounded-[5rem] rounded-bl-none overflow-hidden">
+        <Image src={messImages} alt="shapes" class=" w-16  " />
+        <Image src={heartImages} alt="shapes" class=" w-16 " />
+        <Image src={flashImages} alt="shapes" class="w-16  " />
+        <Image src={heartImages} alt="shapes" class=" w-16 " />
+        <Image src={messImages} alt="shapes" class=" w-16  " />
+
+
+      </div>
+      <!-- social -->
+      <div class="bg-accent border-[1px] border-highlight col-span-12 md:col-span-8  rounded-[5rem] overflow-hidden ">
+        <ol class="flex items-center justify-center gap-6 bg-black bg-opacity-90 backdrop-blur   p-5">
+          { 
+            socialLinks.map((link) => (
+              <li class="group shadow-sm p-1 ">
+                <span class="sr-only">link for {link.friendlyName}</span>
+                <a href={link.link} target="_blank" rel="noopener noreferrer" class="   active:cursor-zoom-out magic-hover magic-hover__square ">
+                  <Image
+                    src={link.icon}
+                    class=" w-8 md:w-16 object-contain bg-blend-multiply   group-hover:animate-bounce  group-hover:underline  "
+                    alt={link.link}
+                  />
+                </a>
+              </li>
+            ))
+          }
+        </ol>
+      
+      </div>
+    </div>
+  </article>
+
+
+</section>
+<script>
+    const btn = document.getElementById("speak");
+    const wave = document.getElementById("wave");
+    const spans = document.querySelectorAll('#greetings span:nth-child(n+2)');
+
+    const synth = window.speechSynthesis;
+    function makeSpeak() {
+      const utterThis = new SpeechSynthesisUtterance("snehal");
+      synth.speak(utterThis);
+    }
+
+    btn?.addEventListener("click", makeSpeak);
+    let currentIndex = 0;
+
+function toggleSpan() {
+  wave?.classList.toggle("hidden"); 
+  spans[currentIndex].classList.add('hidden');
+  currentIndex = (currentIndex + 1) % spans.length;
+  spans[currentIndex].classList.remove('hidden');
+}
+
+
+// Toggle spans every 2 seconds
+setInterval(toggleSpan, 5000);
+  </script>

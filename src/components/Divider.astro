@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import messImages from "assets/mess.png";
+import heartImages from "assets/heart.png";
+import flashImages from "assets/flash.png";
+---
+
+<section class=" bg-secondary m-auto">
+
+<article class="flex flex-wrap items-center justify-center">
+  
+    <Image src={messImages} alt="shapes" class=" w-12 md:w-auto" />
+    <Image src={heartImages} alt="shapes" class=" w-12 md:w-auto" />
+    <Image src={messImages} alt="shapes" class=" w-12 md:w-auto" />
+    <Image src={heartImages} alt="shapes" class=" w-12 md:w-auto" />
+  
+    <Image src={flashImages} alt="shapes" class=" w-12 md:w-auto" />
+    <Image src={heartImages} alt="shapes" class=" w-12 md:w-auto" />
+  
+</article>
+</section>

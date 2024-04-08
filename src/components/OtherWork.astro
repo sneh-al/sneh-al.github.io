@@ -1,25 +1,8 @@
 ---
-import Card from "../layouts/Card.astro";
-import WorkLayout from "../layouts/workLayout.astro";
-const repos = await Astro.glob("../content/other/*.md");
+import Article from "./ui/Article.astro";
 ---
 
-<section>
-  <WorkLayout title='Other Work'>
-        <ul class='grid gap-5 grid-cols-1 md:grid-cols-2'>
+<Article title="Other Work" sectionClass="min-h-screen ">
+  
 
-      {
-        repos.map((repo) => (
-            <Card
-              title={repo.frontmatter.title}
-              href={repo.frontmatter.github}
-              body='fsdfsdkfnksdnfksd jl'
-              homepage={repo.frontmatter.visit}
-              topics={repo.frontmatter.tags}
-              image={repo.frontmatter.image}
-            />
-        ))
-      }
-    </ul>
-  </WorkLayout>
-</section>
+</Article>

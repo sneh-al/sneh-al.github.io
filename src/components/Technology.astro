@@ -1,0 +1,32 @@
+---
+import Article from "./ui/Article.astro";
+import Card from "./ui/Card.astro";
+import { skills } from "consts";
+import { Image } from "astro:assets";
+---
+
+<Article  title="Skills">
+  <header>
+
+    <p class=" text-secondary">
+      I love pushing web development boundaries, exploring various JavaScript
+      libraries like Astro.js and Next.js. I have some experience with MongoDB
+      and Firebase, know some SQL, and enjoy working with headless CMS.
+    </p>
+  </header>
+  <main  class="pt-5">
+    <div class="flex  justify-center flex-col gap-3">
+      <div class="card-container  grid grid-cols-1 md:grid-cols-4 gap-3">
+        {
+          skills.mainFocus.map((skill) => <Card isScondary={false} name={skill.name} color={skill.color} icon={skill.icon} description={skill.description}/>)
+        }
+      </div>
+      <div class="card-container  grid grid-cols-1 md:grid-cols-4 gap-3 ">
+        {
+          skills.secondaryFocus.map((skill) => <Card isScondary={true} name={skill.name} color={skill.color} icon={skill.icon} description={skill.description}/>)
+        }
+      </div>
+     
+    </div>
+  </main>
+</Article>
