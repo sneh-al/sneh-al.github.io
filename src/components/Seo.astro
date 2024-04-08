@@ -1,0 +1,51 @@
+---
+import { SEO } from "astro-seo";
+const {title} = Astro.props
+---
+
+<SEO
+  title={title}
+  description="I'm Snehal, a web developer based from Vyara devloper for Reactjs, Next.js, and Astro.js development. Contact me for your web development needs."
+  openGraph={{
+    basic: {
+      title: "Snehal - Web Developer from Vyara | Web devloper",
+      type: "website",
+      image: "https://avatars.githubusercontent.com/u/52321728?v=4",
+    }
+  }}
+  twitter={{
+    creator: "@sneh-al"
+  }}
+  extend={{
+    link: [
+      { rel: "icon", href: "/favicon.png" },
+      // Add canonical link tag
+      { rel: "canonical", href: "https://sneh-al.github.io/stuff" }
+    ],
+    meta: [
+      {
+        name: "twitter:image",
+        content: "https://avatars.githubusercontent.com/u/52321728?v=4",
+      },
+      { name: "twitter:title", content: "Snehal - Web Developer from Vyara | React, Next.js, Astro.js Developer" },
+      { name: "twitter:description", content: "I'm Snehal, a web developer based in Vyara specializing in React, Next.js, and Astro.js development. Contact me for your web development needs." },
+      { name: "description", content: "I'm Snehal, a web developer based in Vyara specializing in React, Next.js, and Astro.js development. Contact me for your web development needs." },
+      { name: "robots", content: "index,follow" },
+      {
+        name: "schema",
+        type: "application/ld+json",
+        content: JSON.stringify({
+          "@context": "http://schema.org",
+          "@type": "Person",
+          "name": "Snehal",
+          "jobTitle": "Web Developer",
+          "description": "Web developer based in Vyara, specializing in React, Next.js, and Astro.js development.",
+          "url": "https://sneh-al.github.io/"
+        })
+      }
+    ],
+  }}
+/>
+
+
+  

@@ -1,16 +1,20 @@
 ---
-import NaLinks from "../components/NaLinks.astro";
-import StillHere from "../components/StillHere.astro";
-import Layout from "./Layout.astro";
-const { title, href, text, pageTitle } = Astro.props;
+import Navbar from "../components/Navbar.astro";
+import Main from "./main.astro";
+import Footer from "components/Footer.astro";
+
+
+type Props = {
+    metadata: {title: string};
+}
+const { metadata } = Astro.props;
 ---
 
-<Layout title={title}>
-  <main id='intro' class='flex flex-col pt-44'>
-    <a id="top"></a>
+<Main content={metadata}>
+    <Navbar/>
+    <main class=" "  >
+        <slot />
+    </main>
+<Footer/>
+</Main>
 
-      <slot />
-  </main>
-
-  <StillHere />
-</Layout>

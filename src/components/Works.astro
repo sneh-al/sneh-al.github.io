@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import { works } from "consts";
+import Work from "./ui/work.astro";
+---
+
+<section class="flex flex-col relative ">
+  <header class=" sticky top-0  bg-bg-black200/10 p-5">
+
+    <h1 class="text-p p-5 text-center max-w-5xl m-auto text-secondary"> This is some of cool stuff I've been building with code. Take a peek and see what I've been up to.    </h1>
+    
+  </header>
+  <div class="bg-black bg-dot z-10  max-w-6xl m-auto py-32  flex flex-col md:flex-row gap-6   p-5">
+    {
+      works.map((work, i) =><Work title={work.title} url={work.url} image={work.image} info={work.info} tags={work.tags} /> )
+    }
+  </div>
+</section>
+
+<style>
+  html {
+    scroll-snap-type: y mandatory;
+  }
+</style>

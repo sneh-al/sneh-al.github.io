@@ -1,16 +1,23 @@
 ---
-import Page from "../layouts/Page.astro";
-import MyWork from "../components/MyWork.astro";
-import OtherWork from "../components/OtherWork.astro";
----
+import Works from "components/Works.astro";
+import Page from "layouts/page.astro";
+const metadata = {
+  title: "My Work | Snehal",
+};
 
-<Page
-    title='stuff | Snehal'
-    pageTitle=' My Stuff'
-    href='/me'
-    text='Learn about me'>
-    <div class='grid gap-20'
-    data-scroll
-    data-scroll-speed="1"
-    ><MyWork /> <OtherWork /></div>
+---
+ 
+
+
+<Page metadata={metadata}>
+
+  <Works/>
+
+
+
+
+
+
 </Page>
+
+

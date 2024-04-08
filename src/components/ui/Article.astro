@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets';
+import messImages from "assets/mess.png";
+import heartImages from "assets/heart.png";
+import flashImages from "assets/flash.png";
+
+
+type Props={
+    className?: string,
+    sectionClass?:string,
+    title?:string
+}
+const {className,sectionClass,title} = Astro.props;
+---
+
+<section class={`py-32 md:px-10   w-full relative overflow-hidden    text-pretty  ${sectionClass}`}>
+ 
+
+   
+<article class={`max-w-4xl m-auto text-xl z-10   md:text-2xl p-5 ${className} `}>
+    <h2 class="text-3xl md:text-5xl lg:text-7xl pb-5 font-bold yo tracking-widest text-primary   ">{title}</h2>
+
+    <slot/>
+</article>
+</section>

@@ -1,20 +1,27 @@
 {
-  "name": "astro",
+  "name": "sneh-al",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^4.0.0",
-    "astro": "^2.8.1",
-    "astro-icon": "^0.8.1",
-    "locomotive-scroll": "^4.1.4",
-    "sass": "^1.63.6",
-    "tailwindcss": "^3.3.2"
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/mdx": "^2.2.3",
+    "@astrojs/tailwind": "^5.1.0",
+    "@fontsource/monoton": "^5.0.18",
+    "@fontsource/space-mono": "^5.0.19",
+    "astro": "^4.5.13",
+    "astro-seo": "^0.8.3",
+    "autoprefixer": "^10.4.15",
+    "motion": "^10.17.0",
+    "postcss": "^8.4.28",
+    "tailwindcss": "^3.3.5",
+    "tailwindcss-animated": "^1.0.1",
+    "typescript": "^5.4.3"
   }
 }

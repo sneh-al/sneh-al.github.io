@@ -1,0 +1,55 @@
+---
+import "@fontsource/space-mono";
+import "@fontsource/monoton";
+import { ViewTransitions } from "astro:transitions";
+import Seo from "components/Seo.astro"
+type Props = {
+  content: { title: string };
+};
+const { content } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <Seo title={content.title}/>
+    <ViewTransitions />
+    <title>{content.title}</title>
+  </head>
+  <body class="text-text" id="app">
+    <slot />
+  </body><style is:global>
+    body {
+      @apply bg-black text-accent bg-dot;
+
+      font-family: "Space Mono", monospace;
+    }
+    .bg-dot {
+      background-image: radial-gradient(
+        circle at 1px 1px,
+        rgba(255, 255, 255, 0.1) 1px,
+        transparent 0
+      );
+      background-size: 50px 30px;
+    }
+
+    .text-p {
+      @apply text-2xl md:text-5xl  font-bold  leading-[2rem];
+    }
+    .yo {
+      font-family: "Monoton", system-ui;
+    }
+
+    a {
+      @apply hover:!outline transition-all duration-500 ease-in outline-accent;
+    }
+  </style>
+</html>
