@@ -1,34 +1,21 @@
 ---
+import { Image } from "astro:assets";
+type Props = {
+  icon: string | any;
+  name: string;
+  isScondary: boolean;
+};
 
-import { Image } from 'astro:assets';
-type Props ={
-    color:string;
-    icon: string | any;
-    description: string;
-    name: string;
-    isScondary: boolean;
-}
-
-const{color, icon, description,name,isScondary} =Astro.props
+const { icon, name, isScondary } = Astro.props;
 ---
 
-<div class=" aspect-video h-fit flex group  rounded-2xl  shadow-sm shadow-accent   overflow-hidden text-center">
-   <!--big width-  -->
-    <div class={`bg-accent hidden  md:flex flex-col w-full h-full justify-center    overflow-hidden relative   `}>
-   
-        <div class="p-5 md:group-hover:hidden  h-full w-full flex  transition-all duration-300 ease-out mx-auto md:m-auto   ">
-            <Image src={icon}  class={`text-xl  m-auto w-full  ${isScondary && "opacity-50"}`}  alt={name} />
-
-        </div>
-        <p class={`hidden  text-pretty md:group-hover:grid  text-base anim animate-jump-in animate-once animate-duration-500  animate-ease-out animate-alternate animate-fill-backwards transition-all  duration-500 ease-in   w-full h-full text-accent  place-content-center p-3 ${color}`}>{description}</p>
-      </div>
-    <!-- touch -->
-      <div class={`${color} md:hidden flex flex-col w-full h-full justify-center    overflow-hidden relative   `}>
-   
-        <div class="p-5 md:group-hover:hidden  h-full w-full flex  transition-all duration-300 ease-out mx-auto md:m-auto   ">
-            <Image src={icon}  class={`text-xl  m-auto w-full  ${isScondary && "opacity-50"}`}  alt={name} />
-
-        </div>
-        <p class={` text-pretty  text-sm  animate-jump-in animate-once animate-duration-500  animate-ease-out animate-alternate animate-fill-backwards transition-all  duration-500 ease-in   w-full  text-accent grid place-content-center p-5  ${color}`}>{description}</p>
-      </div>
-  </div>
+<div
+  class="h-full flex transition-all flex-col duration-300 ease-out aspect-video bg-accent/10 rounded-[5rem] p-5 max-w-36 md:max-w-44 overflow-hidden text-center">
+  <Image
+    src={icon}
+    loading="eager"
+    class={` m-auto w-full max-w-34  ${isScondary && "opacity-30"}`}
+    alt={name}
+  />
+  <p class="text-nowrap text-base">{name}</p>
+</div>

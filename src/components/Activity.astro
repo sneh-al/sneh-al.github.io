@@ -1,19 +1,17 @@
 ---
 import Article from "./ui/Article.astro";
-import{activities} from "../consts"
+import { activities } from "@consts";
 ---
 
-
-
-<Article  title="Thing i also do " sectionClass="  bg-black ">
-  
-    <ol class="flex flex-col gap-3 text-secondary">
-        {activities.map(activity =>  <li class="flex items-baseline justify-start text-left ">
-            <span>{activity.emoji}</span>
-            <span>{activity.description}</span>
-        </li>)}
-    </ol>
-  
-
+<Article title="A Peek into My Activities" sectionClass="   ">
+  <ol class="flex flex-col gap-3 text-p animate-fade-up bg-black p-5">
+    {
+      activities.map((activity) => (
+        <li class="flex items-baseline justify-start text-left ">
+          <span>{activity.emoji}</span>
+          <span>{activity.description}</span>
+        </li>
+      ))
+    }
+  </ol>
 </Article>
-
