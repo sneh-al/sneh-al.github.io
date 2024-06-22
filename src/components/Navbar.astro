@@ -1,16 +1,27 @@
 ---
-import {  NAV_LINKS } from "../consts";
-import ChevronRight from "./ChevronRight.astro";
-import LogoImage from "../assets/logo.png";
+import { NAV_LINKS } from "@consts";
+import LogoImage from "@assets/logo.png";
 import { Image } from "astro:assets";
-const pathname = Astro.url.pathname
+const pathname = Astro.url.pathname;
 ---
 
-<header class="leading-6 tracking-normal sticky top-0 z-50 backdrop-blur-2xl bg-black/50 shadow shadow-accent">
-  <nav
-    class="md:max-w-4xl flex items-center text-pr justify-between m-auto text-highlight relative "
-  >
-    <a href="/" class="px-5 p-2"><Image src={LogoImage} alt="snehal" class=" w-10 md:w-14  "/></a>
+<header
+  class="leading-6 tracking-normal sticky top-0 z-50 backdrop-blur-2xl bg-zinc-950 /50 px-5 py-3">
+  <nav class="md:max-w-5xl flex items-center justify-between m-auto relative">
+    <a
+      href="/"
+      class="!py-0 flex items-center justify-center md:text-xl font-extrabold link text-white">
+      <Image
+        src={LogoImage}
+        alt="snehal"
+        class="w-12 md:w-14"
+        loading="eager"
+      />
+      <div>
+        <span class=""> Snehal</span><br />
+        <span> Chaudhari </span>
+      </div>
+    </a>
     <ol class="" id="nav">
       {
         NAV_LINKS.map((link) => {
@@ -18,20 +29,14 @@ const pathname = Astro.url.pathname
             <li class="">
               <a
                 href={link.path}
-                class={` w-fit md:text-xl p-5 flex items-center  ${pathname === link.path ? "text-white" :"underline underline-offset-2"} `}
-              >
+                class={` w-fit md:text-xl px-5 py-3 flex items-center rounded-[5rem] bg-highlight text-black  ${pathname === link.path ? " pointer-events-none bg-opacity-20 " : " font-smibold bg-highlight hover:bg-highlight/50 link  "} `}>
                 {link.title}
-                <ChevronRight/>
               </a>
             </li>
           );
         })
       }
-      <li>
-      </li>
+      <li></li>
     </ol>
-
   </nav>
 </header>
-
-

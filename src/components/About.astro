@@ -1,0 +1,77 @@
+---
+import messImages from "@assets/mess.png";
+import heartImages from "@assets/heart.png";
+import cloudImages from "@assets/cloud.png";
+import decoration from "@assets/decoration.png";
+import Technology from "@components/Technology.astro";
+
+import { Image } from "astro:assets";
+---
+
+<section
+  class="overflow-hidden relative bg-zinc-950 rounded-[5rem] max-w-5xl m-auto text-balance">
+  <article
+    class="bg-zinc-950 bg-opacity-5 backdrop-blur-3xl col-span-12 md:col-span-8 flex items-end animate-fade animate-delay-150 overflow-hidden relative section-p md:px-10 flex-col">
+    <div
+      class="text-p flex flex-col items-center justify-center h-full p-5 max-w-5xl m-auto w-full gap-10">
+      <div
+        class="max-w-5xl m-auto flex flex-col gap-10 animate-jump-in text-p relative">
+        <Image
+          src={decoration}
+          alt="shapes"
+          loading="eager"
+          class="absolute opacity-30 bottom-0 -left-12 md:-left-24 lg:-left-44 invert"
+        />
+        <p class="text-p-info relative">
+          <Image
+            src={heartImages}
+            alt="shapes"
+            loading="eager"
+            class="absolute opacity-20 bottom-12 right-0 invert"
+          />
+          Hello there! 👋 I'm a web developer with a background in computer engineering,
+          focused on building robust web applications.
+        </p>
+        <p class="border-l-8 border-secondary pl-5 md:pl-10">
+          I work with Next.js, Astro, and the React.js ecosystem to create
+          engaging digital experiences. I have some experience with MongoDB and
+          Firebase, know some SQL, and enjoy working with headless CMS.
+        </p>
+        <Technology />
+      </div>
+    </div>
+  </article>
+  <article>
+    <div class="bg-secondary/5 backdrop-blur-3xl p-5 rounded-b-[5rem]">
+      <div class="max-w-5xl m-auto section-p md:px-10 relative">
+        <Image
+          src={cloudImages}
+          alt="shapes"
+          loading="eager"
+          class="absolute opacity-10 -top-5 left-12"
+        />
+
+        <Image
+          src={messImages}
+          alt="shapes"
+          loading="eager"
+          class="absolute opacity-10 bottom-24 left-52 invert"
+        />
+        <Image
+          src={decoration}
+          alt="shapes"
+          loading="eager"
+          class="absolute opacity-30 -bottom-24 -right-12 md:-right-24 lg:-right-44 invert"
+        />
+
+        <p class="text-p-info">
+          Outside of coding, I'm enthusiastic about technology 💻, anime 🎌,
+          movies 🎬, and hiking 🌲. You'll often find me diving into the anime,
+          hitting the trails for a good hike 🥾, or catching a great film 🍿 I
+          also keep myself informed with what's happening in the tech world and
+          enjoy Time-traveling through history 🕰️.
+        </p>
+      </div>
+    </div>
+  </article>
+</section>

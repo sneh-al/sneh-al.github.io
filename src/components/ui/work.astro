@@ -1,63 +1,92 @@
 ---
 import { Image } from "astro:assets";
 import External from "../External.astro";
-type Props ={
-    title: string,
-    tags : string[],
-    info :string,
-    url: string,
-    image : any,
-    isLink?: boolean
-}
 
- const {title,tags,info,url,image,isLink} =Astro.props
+type Props = {
+  title: string;
+  tags: string[];
+  info: string;
+  url: string;
+  image: any;
+  isLink?: boolean;
+  link?: string;
+  heroname?: string;
+};
+
+const { title, tags, info, url, image, isLink, link, heroname } = Astro.props;
 ---
 
-
-<article class=" rounded-3xl  shadow-sm   flex  items-center justify-center   relative flex-1 overflow-hidden  hover:-translate-x-1 hover:-translate-y-1  border-b-4  border-r-4 border-b-transparent border-r-transparent hover:border-r-accent outline-none  hover:border-b-accent transition-all duration-500   ">
-    <div class="w-full border-[1px] rounded-3xl border-accent flex flex-col justify-evenly gap-5 p-10 info z-10 bg-black/70 ov backdrop-blur h-full relative">
-      <h1  class=" font-extrabold text-primary text-2xl md:text-4xl  w-fit  ">{title}</h1>
-      <p class="flex flex-wrap gap-3 items-center">
-        {tags.map((tag) => (
+<article
+  id=""
+  class="rounded-3xl project shadow-sm max-w-6xl m-auto w-full md:aspect-video flex items-center justify-center relative flex-1 overflow-hidden border-b-4 border-r-4 border-b-transparent border-r-transparent transition-all duration-500">
+  <div
+    class="w-full border-[1px] rounded-3xl border-accent flex flex-col justify-center gap-5 p-10 info z-10 bg-zinc-950/70 ov backdrop-blur h-full relative">
+    <h1 class="font-extrabold text-primary text-2xl md:text-4xl w-fit">
+      {title}
+    </h1>
+    <p class="flex flex-wrap gap-3 items-center">
+      {
+        tags.map((tag) => (
           <span class="px-2 rounded-md border-[1px] border-accent text-accent  text-sm  md:text-base">
             {tag}
           </span>
-        ))}
-      </p>
-      <p class=" md:text-xl text-secondary ">{info}</p>
-     <div class="flex items-center gap-3 text-highlight">
-        <a
+        ))
+      }
+    </p>
+    <p class="md:text-xl text-secondary">{info}</p>
+    <div class="flex items-center gap-3 text-highlight flex-wrap">
+      <a
         href={url}
-        class="flex items-center gap-3 w-fit font-semibold  "
+        class="flex items-center gap-3 w-fit font-semibold"
         target="_blank"
-        rel="noopener noreferrer"
-      >
+        rel="noopener noreferrer">
         Take a Look <External />{" "}
       </a>
-      {isLink &&
-          <a
-        href={`/stuff/${title}`}
-        class="flex items-center justify-center gap-3  font-semibold "
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-      Github
-       
-        <External />
-      </a>
-      
-       <a
-        href={`/stuff/${title}`}
-        class="flex items-center gap-3 w-fit font-semibold ml-auto underline underline-offset-2 "
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn More 
-      </a>
-  
-
+      {
+        isLink && (
+          <>
+            <a
+              href={`/stuff/${title}`}
+              class="flex items-center justify-center gap-3  font-semibold  "
+              target="_blank"
+              rel="noopener noreferrer">
+              Github
+              <External />
+            </a>
+            <a
+              href={link}
+              class="flex items-center gap-3 w-fit font-semibold md:ml-auto underline underline-offset-2   ">
+              Learn More
+            </a>
+          </>
+        )
       }
-     </div>
     </div>
-      <Image src={image} alt={title} class="absolute object-cover h-full w-full   " />
-  </article>
+  </div>
+  <Image
+    src={image}
+    alt={title}
+    class="absolute object-cover h-full w-full"
+    transition:name={heroname}
+  />
+</article>
+
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+      .project {
+        transform: scale(1);
+        animation: scale-a-lil linear both;
+        animation-duration: 300ms;
+        animation-timeline: view();
+        animation-range: 250px 500px;
+      }
+    }
+  }
+
+  @keyframes scale-a-lil {
+    from {
+      transform: scale(0.9);
+    }
+  }
+</style>

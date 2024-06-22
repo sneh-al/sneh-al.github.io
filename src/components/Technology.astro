@@ -1,31 +1,22 @@
 ---
-import Article from "./ui/Article.astro";
 import Card from "./ui/Card.astro";
-import { skills } from "../consts";
+import { skills } from "@consts";
 ---
 
-<Article  title="Skills">
-  <header>
-
-    <p class=" text-secondary">
-      I love pushing web development boundaries, exploring various JavaScript
-      libraries like Astro.js and Next.js. I have some experience with MongoDB
-      and Firebase, know some SQL, and enjoy working with headless CMS.
-    </p>
-  </header>
-  <main  class="pt-5">
-    <div class="flex  justify-center flex-col gap-3">
-      <div class="card-container  grid grid-cols-1 md:grid-cols-4 gap-3">
-        {
-          skills.mainFocus.map((skill) => <Card isScondary={false} name={skill.name} color={skill.color} icon={skill.icon} description={skill.description}/>)
-        }
-      </div>
-      <div class="card-container  grid grid-cols-1 md:grid-cols-4 gap-3 ">
-        {
-          skills.secondaryFocus.map((skill) => <Card isScondary={true} name={skill.name} color={skill.color} icon={skill.icon} description={skill.description}/>)
-        }
-      </div>
-     
-    </div>
-  </main>
-</Article>
+<div class="lg:max-w-4xl">
+  <h2 class="text-p text-secondary p-5">
+    Here Some thechnologies I've worked with:
+  </h2>
+  <div class="flex flex-wrap items-start gap-5">
+    {
+      skills.mainFocus.map((skill) => (
+        <Card isScondary={false} name={skill.name} icon={skill.icon} />
+      ))
+    }
+    {
+      skills.secondaryFocus.map((skill) => (
+        <Card isScondary={true} name={skill.name} icon={skill.icon} />
+      ))
+    }
+  </div>
+</div>

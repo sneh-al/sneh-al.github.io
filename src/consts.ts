@@ -1,3 +1,5 @@
+import workIcon from "./assets/svg/work.svg";
+import academyIcon from "./assets/svg/academy.svg";
 import githubIcon from "./assets/logo/github.png";
 import instagramIcon from "./assets/logo/instagram.png";
 import gmailIcon from "./assets/logo/gmail.png";
@@ -9,8 +11,8 @@ import firebaseLogo from "./assets/svg/firebase.svg";
 import nodejsLogo from "./assets/svg/nodejs.svg";
 import appwriteLogo from "./assets/svg/appwrite.svg";
 import mongodbLogo from "./assets/svg/mongodb.svg";
-import workIcon from "./assets/svg/work.svg";
-import academyIcon from "./assets/svg/academy.svg";
+
+// project images
 import vidya from "./assets/projects/vidya.png";
 import warli from "./assets/projects/warli.png";
 
@@ -44,7 +46,7 @@ export const socialLinks: Array<SocialLink> = [
   {
     icon: githubIcon,
     friendlyName: "github",
-    link: "http://https://github.com/sneh-al",
+    link: "https://github.com/sneh-al",
   },
   {
     icon: instagramIcon,
@@ -60,7 +62,7 @@ export const socialLinks: Array<SocialLink> = [
 
 export const NAV_LINKS: Array<{ title: string; path: string }> = [
   {
-    title: "Check Out My Work",
+    title: "My Work",
     path: "/stuff",
   },
 ];
@@ -171,6 +173,7 @@ export const works = [
     url: "https://warlimagic.vercel.app/",
     info: "Experience the magic of AI as you craft your own Warli paintings.",
     image: warli,
+    heroname: "warli",
   },
   {
     title: "Vidhaykunj English and Gujrati medium school",
@@ -179,5 +182,6 @@ export const works = [
     info: "Static website for School",
 
     image: vidya,
+    heroname: "vidya",
   },
 ];
