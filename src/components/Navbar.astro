@@ -6,21 +6,16 @@ const pathname = Astro.url.pathname;
 ---
 
 <header
-  class="leading-6 tracking-normal sticky top-0 z-50 backdrop-blur-2xl bg-zinc-950 /50 px-5 py-3">
+  class="leading-6 tracking-normal sticky top-0 z-50 backdrop-blur-2xl bg-zinc-950/50 shadow shadow-accent/10 px-5 py-3">
   <nav class="md:max-w-5xl flex items-center justify-between m-auto relative">
     <a
       href="/"
-      class="!py-0 flex items-center justify-center md:text-xl font-extrabold link text-white">
-      <Image
-        src={LogoImage}
-        alt="snehal"
-        class="w-12 md:w-14"
-        loading="eager"
-      />
-      <div>
+      class="flex !py-0 !pl-0 items-center justify-center font-extrabold text-white">
+      <Image src={LogoImage} alt="snehal" class="w-12" loading="eager" />
+      <p class="font-semibold text-xl">
         <span class=""> Snehal</span><br />
         <span> Chaudhari </span>
-      </div>
+      </p>
     </a>
     <ol class="" id="nav">
       {

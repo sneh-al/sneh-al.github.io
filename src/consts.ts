@@ -70,12 +70,15 @@ export const NAV_LINKS: Array<{ title: string; path: string }> = [
 export const activities = [
   {
     emoji: "🍿",
-    description:
-      "Embarking on thrilling adventures in the realms of anime, movie/tv",
+    description: "Embarking on thrilling adventures in the realms of anime",
+  },
+  {
+    emoji: "🎬",
+    description: "Catching a great movie or TV show",
   },
   { emoji: "🕰️", description: "Time-traveling through history." },
   { emoji: "📱", description: "Staying up-to-date with the technology." },
-  { emoji: "🥾", description: "Enjoying hiking" },
+  { emoji: "🥾", description: "hitting the trails for a good hike" },
   // { emoji: "🌄", description: "Wandering to new places." },
 ];
 

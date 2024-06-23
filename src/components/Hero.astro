@@ -8,26 +8,25 @@ import heartImages from "../assets/heart.png";
 import flashImages from "../assets/flash.png";
 ---
 
-<section class="py-24 md:py-32 m-auto">
-  <article
-    class="p-5 max-w-5xl flex flex-col justify-center gap-6 items-center m-auto">
+<section class="md:pb-32">
+  <article class="p-5 flex flex-col justify-center gap-6 items-center m-auto">
     <div
-      class="w-full animate-fade-up rounded-[5rem] overflow-hidden bg-zinc-950">
+      class="w-full animate-fade-down rounded-[5rem] overflow-hidden bg-zinc-950">
       <h1
-        class="yo w-full bg-zinc-950/5 backdrop-blur-3xl text-center text-highlight text-4xl md:text-7xl lg:text-9xl py-6 tracking-wide text-nowrap flex items-center justify-center"
+        class="yo w-full bg-zinc-950/5 backdrop-blur-3xl text-center text-highlight text-5xl md:text-7xl lg:text-9xl py-6 tracking-wide text-nowrap flex items-center justify-center"
         id="greetings">
         <span class="animate-wiggle-more animate-twice" id="wave">👋</span>
         <span
-          class="animate-fade-right transition-all duration-500 ease-linear word"
+          class="animate-fade-right transition-all duration-300 ease-linear word"
           id="johar">Johar</span
         >
         <span
-          class="animate-fade-left hidden transition-all duration-500 ease-linear word"
+          class="animate-fade-left hidden transition-all duration-300 ease-linear word"
           id="sup">YO 'SUP?</span
         >
       </h1>
     </div>
-    <div class="grid gap-6 grid-cols-12">
+    <div class="grid gap-6 grid-cols-12 max-w-5xl m-auto">
       <!-- DP -->
       <div
         class="border border-secondary col-span-12 md:col-span-4 rounded-[5rem] md:rounded-bl-[15rem] md:rounded-tr-[15rem] relative overflow-hidden animate-fade-up animate-delay-200">
@@ -50,7 +49,7 @@ import flashImages from "../assets/flash.png";
       </div>
       <!-- intro -->
       <div
-        class="bg-zinc-950 col-span-12 md:col-span-8 rounded-[5rem] rounded-tr-none flex items-end justify-center relative animate-fade animate-delay-150 overflow-hidden">
+        class="bg-zinc-950 col-span-12 md:col-span-8 rounded-[5rem] rounded-tr-none flex items-end justify-center relative animate-fade-down animate-delay-300 md:animate-fade-right overflow-hidden">
         <Image
           src={messImages}
           alt="shapes"
@@ -65,9 +64,9 @@ import flashImages from "../assets/flash.png";
         />
 
         <div
-          class="text-p flex items-center p-10 justify-center bg-zinc-950 bg-opacity-5 backdrop-blur-3xl h-full w-full text-balance">
-          <p class="max-w-md text-secondary">
-            <span class="font-bold">I'm Snehal</span>
+          class="flex items-center p-10 justify-center bg-zinc-950 bg-opacity-5 backdrop-blur-3xl h-full w-full text-balance">
+          <p class="max-w-md">
+            <span class="text-p-info text-gradient">I'm Snehal</span>
             <span class="font-thin text-accent text-xs md:text-base"
               >/Sne-hal/<button aria-label="pronounce name" id="speak">
                 <svg
@@ -87,9 +86,9 @@ import flashImages from "../assets/flash.png";
               </button>
             </span>,
             <br />
-            <span class="font-normal text-primary"
-              >an otaku and engineer from Vyara, I craft user interfaces to
-              bring digital experiences to life.</span
+            <span class="font-normal text-p"
+              >an otaku and engineer from Vyara, I craft user-friendly
+              interfaces that transform ideas into engaging digital experiences.</span
             >
           </p>
         </div>

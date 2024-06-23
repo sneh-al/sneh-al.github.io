@@ -15,32 +15,137 @@ const { title, time, uni, clg, icon, last, type } = Astro.props;
 <div class="flex relative pb-12">
   {
     !last && (
-      <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
-        <div class="h-full w-1 bg-accent/80 pointer-events-none animate-fade-up " />
+      <div
+        id="line"
+        class="h-full w-10 absolute inset-0 flex items-center justify-center ">
+        <div class="h-full w-1 bg-accent/80 pointer-events-none " />
       </div>
     )
   }
   <div
-    class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary inline-flex items-center justify-center relative z-10 animate-fade-down">
+    id="icon"
+    class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary inline-flex items-center justify-center relative z-10 opacity-0">
     <Image src={icon} alt={type} loading="eager" />
   </div>
   <div
-    class="flex-grow flex flex-col gap-2 pl-4 shadow-md shadow-balck animate-fade-right bg-black">
-    <h2
-      class="font-medium text-sm mb-2 tracking-wider underline underline-offset-auto w-fit py-1 px-2 rounded-3xl text-accent animate-flip-down">
+    id="jounry-main"
+    class="flex-grow flex flex-col gap-2 p-5 rounded-3xl bg-zinc-950 backdrop-blur-3xl shadow-md shadow-balck opacity-0">
+    <p
+      id="time"
+      class="font-medium text-sm mb-2 tracking-wider underline underline-offset-auto w-fit py-1 px-2 rounded-3xl text-accent opacity-0">
       {time}
-    </h2>
+    </p>
     <h2
-      class="font-medium text-p tracking-wider text-secondary animate-jump-in origin-left">
+      id="journey-header"
+      class="font-medium text-p tracking-wider text-secondary opacity-0">
       {title}
     </h2>
     <p
-      class="text-xs md:text-base tracking-wider border-accent border-2 rounded-xl w-fit p-2 text-primary animate-flip-down">
+      id="clg"
+      class="text-xs md:text-base tracking-wider border-accent border-2 rounded-xl w-fit p-2 text-primary opacity-0">
       {clg}
     </p>
 
-    <p class="text-balance text-base md:text-xl animate-flip-up">
+    <p id="uni" class="text-balance text-base md:text-xl opacity-0">
       {uni}
     </p>
   </div>
 </div>
+
+<script>
+  import { animate, inView } from "motion";
+  inView("#icon", (info) => {
+    animate(
+      info.target,
+      { opacity: [0, 0.5, 1] },
+
+      {
+        duration: 0.5,
+        delay: 0.5,
+        easing: [0.22, 0.03, 0.26, 1],
+      }
+    );
+  });
+  inView("#jounry-main", (info) => {
+    animate(info.target, { opacity: [0, 0.5, 1] }, { delay: 0.5 });
+  });
+  inView("#line", (info) => {
+    animate(
+      info.target,
+      {
+        opacity: [0, 0.5, 1],
+        height: [
+          "0%",
+          "10%",
+          "20%",
+          "30%",
+          "40%",
+          "50%",
+          "60%",
+          "70%",
+          "80%",
+          "90%",
+          "100%",
+        ],
+      },
+
+      {
+        duration: 2,
+        easing: [0.22, 0.03, 0.26, 1],
+        endDelay: 0.5,
+        delay: 1,
+      }
+    );
+  });
+  inView("#time", (info) => {
+    animate(
+      info.target,
+      { height: ["0%", " 50%", "100%"], opacity: [0, 0.5, 1] },
+
+      {
+        duration: 2,
+        easing: [0.22, 0.03, 0.26, 1],
+        endDelay: 0.5,
+        delay: 1,
+      }
+    );
+  });
+  inView("#journey-header", (info) => {
+    animate(
+      info.target,
+      { scale: [0.5, 1.1, 1], opacity: [0, 0.5, 1] },
+      {
+        duration: 1,
+        easing: "ease-out",
+        endDelay: 0.5,
+        delay: 1,
+      }
+    );
+  });
+
+  inView("#clg", (info) => {
+    animate(
+      info.target,
+      { scale: [0.5, 1.1, 1], opacity: [0, 0.5, 1] },
+      {
+        duration: 2,
+        easing: "ease-out",
+        delay: 1,
+      }
+    );
+  });
+
+  inView("#uni", (info) => {
+    animate(
+      info.target,
+      { opacity: [0, 0.5, 1] },
+
+      {
+        duration: 2,
+        delay: 1,
+        easing: [0.22, 0.03, 0.26, 1],
+        endDelay: 1,
+      }
+    );
+  });
+</script>

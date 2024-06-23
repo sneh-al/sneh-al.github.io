@@ -3,15 +3,15 @@ import { works } from "@consts";
 import Work from "./ui/work.astro";
 ---
 
-<section class="flex flex-col relative">
-  <header class="top-0 bg-black p-5 py-24">
-    <h1 class="text-p-info p-5 text-center max-w-5xl m-auto !text-secondary">
+<section class="flex flex-col">
+  <header class="top-0 bg-black p-5">
+    <h1
+      class="text-p-info head p-5 text-center py-24 max-w-5xl m-auto !text-secondary">
       This is some of stuff I've been building with code. Take a peek and see
       what I've been up to.
     </h1>
   </header>
-  <main
-    class="bg-black bg-dot z-10 w-full m-auto py-32 flex flex-col gap-6 p-5">
+  <main class="z-10 w-full flex flex-col gap-6 p-5 relative section-padding">
     {
       works.map((work) => (
         <Work
@@ -29,11 +29,11 @@ import Work from "./ui/work.astro";
 <style>
   @media (prefers-reduced-motion: no-preference) {
     @supports (animation-timeline: scroll()) {
-      h1 {
+      .head {
         animation: scale-down linear both;
-        animation-duration: 300ms;
+        animation-duration: 3ms;
         animation-timeline: scroll();
-        animation-range: exit -50px;
+        animation-range: exit -400px;
       }
     }
   }

@@ -1,17 +1,68 @@
 ---
-import Article from "./ui/Article.astro";
 import { activities } from "@consts";
+import messImages from "@assets/mess.png";
+import cloudImages from "@assets/cloud.png";
+import decoration from "@assets/decoration.png";
+import { Image } from "astro:assets";
 ---
 
-<Article title="A Peek into My Activities" sectionClass="   ">
-  <ol class="flex flex-col gap-3 text-p animate-fade-up bg-black p-5">
-    {
-      activities.map((activity) => (
-        <li class="flex items-baseline justify-start text-left ">
-          <span>{activity.emoji}</span>
-          <span>{activity.description}</span>
-        </li>
-      ))
-    }
-  </ol>
-</Article>
+<article>
+  <div
+    class="bg-primary/5 backdrop-blur-3xl p-5 rounded-b-[5rem] text-pretty md:!leading-[2.5rem]">
+    <div class="max-w-5xl m-auto section-padding md:px-10 relative">
+      <Image
+        src={cloudImages}
+        alt="shapes"
+        loading="eager"
+        class="absolute opacity-10 -top-5 left-12"
+      />
+
+      <Image
+        src={messImages}
+        alt="shapes"
+        loading="eager"
+        class="absolute opacity-10 bottom-24 left-52 invert"
+      />
+      <Image
+        src={decoration}
+        alt="shapes"
+        loading="eager"
+        class="absolute opacity-30 -bottom-24 -right-12 md:-right-24 lg:-right-44 invert"
+      />
+      <div>
+        <h3 class="text-secondary text-p-info list-header">
+          Other Activities I Enjoy :
+        </h3>
+        <ol id="list" class="flex flex-col gap-3 text-p p-5">
+          {
+            activities.map((activity) => (
+              <li class="flex items-baseline justify-start text-left opacity-0  ">
+                <span class="mr-3">{activity.emoji}</span>
+                <span>{activity.description}</span>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </div>
+  </div>
+</article>
+
+<script>
+  import { animate, inView } from "motion";
+
+  inView(".list-header", (info) => {
+    animate(
+      info.target,
+      { y: [-10, -5, 0], opacity: [0, 0.5, 1] },
+      { duration: 1, easing: "ease-out", endDelay: 0.5 }
+    );
+  });
+  inView("#list li", (info) => {
+    animate(
+      info.target,
+      { opacity: [0, 0.5, 1] },
+      { duration: 1, easing: "ease-out", delay: 0.5, endDelay: 0.5 }
+    );
+  });
+</script>

@@ -7,8 +7,11 @@ import { socialLinks } from "@consts";
 ---
 
 <footer class="bg-black flex flex-col">
-  <article class="m-auto flex flex-col gap-6 max-w-5xl p-5 section-p md:px-10">
-    <div class="text-p-info w-full flex-col gap-5 flex text-balance">
+  <article
+    class="m-auto flex flex-col gap-6 max-w-5xl p-5 section-padding md:px-10">
+    <div
+      class="text-p-info w-full flex-col gap-5 flex text-balance opacity-0"
+      id="text">
       <p>
         Feel free to contact me for <span class="text-primary"
           >collaborations</span
@@ -20,10 +23,13 @@ import { socialLinks } from "@consts";
       <p class="text-secondary">Let's make something amazing together!</p>
     </div>
 
-    <ol class="flex items-start text-highlight py-5">
+    <ul
+      class="flex items-start text-highlight py-5 relative"
+      ,
+      id="social-link">
       {
         socialLinks.map((link) => (
-          <li class=" animate-rotate-x animate-delay-100 ">
+          <li class="  ">
             <span class="sr-only">link for {link.friendlyName}</span>
             <a
               href={link.link}
@@ -43,7 +49,7 @@ import { socialLinks } from "@consts";
           </li>
         ))
       }
-    </ol>
+    </ul>
   </article>
 
   <article
@@ -68,3 +74,32 @@ import { socialLinks } from "@consts";
     </div>
   </article>
 </footer>
+
+<script>
+  import { inView, animate, stagger } from "motion";
+  inView("footer", (info) => {
+    animate(info.target, { opacity: [0, 0.5, 1] });
+  });
+
+  inView("#text", (info) => {
+    animate(
+      info.target,
+      { opacity: [0, 0.5, 1] },
+      { endDelay: 0.5, duration: 1 }
+    );
+  });
+  inView("#social-link li", (info) => {
+    animate(
+      info.target,
+
+      {
+        opacity: [0, 0.5, 1],
+      },
+      {
+        duration: 2,
+        delay: stagger(0.5),
+        endDelay: 0.5,
+      }
+    );
+  });
+</script>

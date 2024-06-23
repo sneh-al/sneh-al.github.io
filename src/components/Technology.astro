@@ -3,11 +3,13 @@ import Card from "./ui/Card.astro";
 import { skills } from "@consts";
 ---
 
-<div class="lg:max-w-4xl">
-  <h2 class="text-p text-secondary p-5">
-    Here Some thechnologies I've worked with:
-  </h2>
-  <div class="flex flex-wrap items-start gap-5">
+<div class="">
+  <h3 class="text-p text-secondary py-5 list-header">
+    Here Some thechnologies I've reccently worked with:
+  </h3>
+  <ul
+    class="flex flex-wrap gap-5 justify-center max-w-md items-start"
+    id="tech-list">
     {
       skills.mainFocus.map((skill) => (
         <Card isScondary={false} name={skill.name} icon={skill.icon} />
@@ -18,5 +20,17 @@ import { skills } from "@consts";
         <Card isScondary={true} name={skill.name} icon={skill.icon} />
       ))
     }
-  </div>
+  </ul>
 </div>
+
+<script>
+  import { animate, inView, stagger } from "motion";
+
+  inView("#tech-list li", (info) => {
+    animate(
+      info.target,
+      { opacity: [0, 0.5, 1] },
+      { duration: 0.5, easing: "ease-out", delay: stagger(0.5), endDelay: 0.5 }
+    );
+  });
+</script>
