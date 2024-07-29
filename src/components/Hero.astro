@@ -1,55 +1,58 @@
 ---
 import { Image } from "astro:assets";
-import { socialLinks } from "../consts";
-import Photo from "../assets/photo.png";
-import bg from "../assets/bg.svg";
-import messImages from "../assets/mess.png";
-import heartImages from "../assets/heart.png";
-import flashImages from "../assets/flash.png";
+import { socialLinks } from "@consts";
+import Photo from "@assets/photo.png";
+import bg from "@assets/bg.svg";
+import messImages from "@assets/mess.png";
+import heartImages from "@assets/heart.png";
 ---
 
-<section class="md:pb-32">
-  <article class="p-5 flex flex-col justify-center gap-6 items-center m-auto">
+<section
+  class="md:py-24 pb-24 relative bg-gradient-to-b from-black via-black/50 to-transparent">
+  <article
+    class="flex flex-col justify-center gap-10 items-center m-auto max-w-5xl p-5">
     <div
-      class="w-full animate-fade-down rounded-[5rem] overflow-hidden bg-zinc-950">
+      class="w-full animate-fade-up rounded-[5rem] overflow-hidden bg-black shadow-highlight/10 shadow">
       <h1
-        class="yo w-full bg-zinc-950/5 backdrop-blur-3xl text-center text-highlight text-5xl md:text-7xl lg:text-9xl py-6 tracking-wide text-nowrap flex items-center justify-center"
+        class="yo w-full backdrop-blur-3xl text-center text-highlight text-5xl sm:text-7xl md:text-7xl lg:text-9xl py-6 tracking-wide text-nowrap flex items-center justify-center"
         id="greetings">
         <span class="animate-wiggle-more animate-twice" id="wave">👋</span>
         <span
-          class="animate-fade-right transition-all duration-300 ease-linear word"
+          class="animate-fade-right transition-all duration-500 ease-linear word"
           id="johar">Johar</span
         >
         <span
-          class="animate-fade-left hidden transition-all duration-300 ease-linear word"
+          class="animate-fade-left hidden transition-all duration-500 ease-linear word"
           id="sup">YO 'SUP?</span
         >
       </h1>
     </div>
-    <div class="grid gap-6 grid-cols-12 max-w-5xl m-auto">
+    <div class="grid gap-6 grid-cols-12 m-auto">
       <!-- DP -->
       <div
-        class="border border-secondary col-span-12 md:col-span-4 rounded-[5rem] md:rounded-bl-[15rem] md:rounded-tr-[15rem] relative overflow-hidden animate-fade-up animate-delay-200">
-        <figure class="h-full overflow-hidden">
-          <Image
-            class="object-contain object-bottom z-10 relativer h-full"
-            src={Photo}
-            alt="snehal"
-            quality="mid"
-            loading="eager"
-          />
-          <Image
-            quality="low"
-            src={bg}
-            class="absolute top-0 left-0 w-full h-full -z-10"
-            alt=""
-            loading="eager"
-          />
-        </figure>
+        class="col-span-12 md:col-span-4 rounded-[5rem] relative overflow-hidden animate-fade-up animate-delay-200 shadow-highlight/10 shadow">
+        <div class="m-auto relative">
+          <figure class="h-full overflow-hidden">
+            <Image
+              class="object-contain object-bottom z-10 relativer h-full"
+              src={Photo}
+              alt="snehal"
+              quality="mid"
+              loading="eager"
+            />
+            <Image
+              quality="low"
+              src={bg}
+              class="absolute top-0 left-0 w-full h-full -z-10"
+              alt=""
+              loading="eager"
+            />
+          </figure>
+        </div>
       </div>
       <!-- intro -->
       <div
-        class="bg-zinc-950 col-span-12 md:col-span-8 rounded-[5rem] rounded-tr-none flex items-end justify-center relative animate-fade-down animate-delay-300 md:animate-fade-right overflow-hidden">
+        class="bg-black col-span-12 md:col-span-8 rounded-[5rem] flex items-end justify-center relative animate-fade-down animate-delay-300 md:animate-fade-right overflow-hidden shadow-highlight/10 shadow">
         <Image
           src={messImages}
           alt="shapes"
@@ -64,70 +67,58 @@ import flashImages from "../assets/flash.png";
         />
 
         <div
-          class="flex items-center p-10 justify-center bg-zinc-950 bg-opacity-5 backdrop-blur-3xl h-full w-full text-balance">
-          <p class="max-w-md">
-            <span class="text-p-info text-gradient">I'm Snehal</span>
-            <span class="font-thin text-accent text-xs md:text-base"
-              >/Sne-hal/<button aria-label="pronounce name" id="speak">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="transparent"
-                  class="w-4 h-4 rounded-full">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    fill="currentColor"
-                    d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
-                  ></path>
-                </svg>
-              </button>
-            </span>,
-            <br />
-            <span class="font-normal text-p"
-              >an otaku and engineer from Vyara, I craft user-friendly
-              interfaces that transform ideas into engaging digital experiences.</span
-            >
-          </p>
-        </div>
-      </div>
+          class="flex items-center justify-center h-full w-full m-auto backdrop-blur text-pretty">
+          <div class="px-5 py-10 md:p-10 m-auto w-fit">
+            <h3 class="text-p-info text-secondary font-semibold">
+              I'm Snehal
 
-      <!-- eyes -->
-      <div
-        class="hidden md:flex items-center bg-accent col-span-12 md:col-span-4 rounded-[5rem] rounded-bl-none overflow-hidden animate-fade-down animate-delay-200">
-        <Image src={messImages} alt="shapes" loading="eager" class="w-16" />
-        <Image src={heartImages} alt="shapes" loading="eager" class="w-16" />
-        <Image src={flashImages} alt="shapes" loading="eager" class="w-16" />
-        <Image src={heartImages} alt="shapes" loading="eager" class="w-16" />
-        <Image src={messImages} alt="shapes" loading="eager" class="w-16" />
-      </div>
-      <!-- social -->
-      <div
-        class="bg-zinc-950 col-span-12 md:col-span-8 rounded-[5rem] overflow-hidden animate-fade-down animate-delay-300">
-        <ol
-          class="flex items-center justify-center gap-6 backdrop-blur-3xl p-5">
-          {
-            socialLinks.map((link) => (
-              <li class=" animate-rotate-x animate-delay-100 ">
-                <span class="sr-only">link for {link.friendlyName}</span>
-                <a
-                  href={link.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="active:cursor-zoom-out group  flex items-center justify-center    ">
-                  <Image
-                    src={link.icon}
-                    loading="eager"
-                    class="w-8 md:w-14 lg:w-16 object-contain group-hover:animate-bounce transition-all      "
-                    alt={link.link}
-                  />
-                </a>
-              </li>
-            ))
-          }
-        </ol>
+              <span class="font-normal text-accent text-xs md:text-base"
+                >/ˈsnɛhəl/<button aria-label="pronounce name" id="speak">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="transparent"
+                    class="w-4 h-4 rounded-full">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      fill="currentColor"
+                      d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+                    ></path>
+                  </svg>
+                </button>
+                ,
+              </span>
+            </h3>
+            <p class="text-p text-primary">
+              I craft user-friendly interfaces that transform ideas into digital
+              experiences.
+            </p>
+            <ol class="flex items-center gap-5 px-5 pt-5">
+              {
+                socialLinks.map((link) => (
+                  <li class="  ">
+                    <span class="sr-only">link for {link.friendlyName}</span>
+                    <a
+                      href={link.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="active:cursor-zoom-out w-fit group  flex items-center justify-center   rounded-xl  ">
+                      <Image
+                        src={link.icon}
+                        loading="eager"
+                        class="w-8  object-contain group-hover:scale-125 transition-all duration-300 ease-linear "
+                        alt={link.link}
+                      />
+                    </a>
+                  </li>
+                ))
+              }
+            </ol>
+          </div>
+        </div>
       </div>
     </div>
   </article>

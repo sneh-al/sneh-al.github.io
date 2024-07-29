@@ -1,14 +1,23 @@
 ---
 import Card from "./ui/Card.astro";
 import { skills } from "@consts";
+import { Image } from "astro:assets";
+import messImages from "@assets/mess.png";
 ---
 
 <div class="">
-  <h3 class="text-p text-secondary py-5 list-header">
-    Here Some thechnologies I've reccently worked with:
+  <h3
+    class="text-secondary text-balance text-p-info list-header flex items-center relative w-fit">
+    <Image
+      src={messImages}
+      alt="shapes"
+      loading="eager"
+      class="absolute opacity-20 -top-16 right-0 invert"
+    />
+    <span> Recently Worked With </span>
   </h3>
   <ul
-    class="flex flex-wrap gap-5 justify-center max-w-md items-start"
+    class="flex flex-wrap gap-3 max-w-sm md:max-w-md lg:max-w-lg justify-center pt-5"
     id="tech-list">
     {
       skills.mainFocus.map((skill) => (
@@ -22,15 +31,3 @@ import { skills } from "@consts";
     }
   </ul>
 </div>
-
-<script>
-  import { animate, inView, stagger } from "motion";
-
-  inView("#tech-list li", (info) => {
-    animate(
-      info.target,
-      { opacity: [0, 0.5, 1] },
-      { duration: 0.5, easing: "ease-out", delay: stagger(0.5), endDelay: 0.5 }
-    );
-  });
-</script>

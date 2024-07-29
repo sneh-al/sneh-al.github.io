@@ -1,42 +1,27 @@
 ---
 import { activities } from "@consts";
-import messImages from "@assets/mess.png";
-import cloudImages from "@assets/cloud.png";
-import decoration from "@assets/decoration.png";
+import HeartImage from "@assets/heart.png";
 import { Image } from "astro:assets";
 ---
 
-<article>
-  <div
-    class="bg-primary/5 backdrop-blur-3xl p-5 rounded-b-[5rem] text-pretty md:!leading-[2.5rem]">
-    <div class="max-w-5xl m-auto section-padding md:px-10 relative">
-      <Image
-        src={cloudImages}
-        alt="shapes"
-        loading="eager"
-        class="absolute opacity-10 -top-5 left-12"
-      />
-
-      <Image
-        src={messImages}
-        alt="shapes"
-        loading="eager"
-        class="absolute opacity-10 bottom-24 left-52 invert"
-      />
-      <Image
-        src={decoration}
-        alt="shapes"
-        loading="eager"
-        class="absolute opacity-30 -bottom-24 -right-12 md:-right-24 lg:-right-44 invert"
-      />
-      <div>
-        <h3 class="text-secondary text-p-info list-header">
-          Other Activities I Enjoy :
+<article
+  class="section-padding rounded-[5rem] w-full relative overflow-hidden bg-black border-highlight/10 border z-10">
+  <div class="md:!leading-[2.5rem] m-auto max-w-5xl">
+    <div class="relative">
+      <div class="p-5">
+        <h3 class="text-secondary text-p-info relative flex gap-5 w-fit">
+          <span>Other Activities I Enjoy</span>
+          <Image
+            src={HeartImage}
+            alt="shapes"
+            loading="eager"
+            class="absolute opacity-20 -top-16 right-0 invert"
+          />
         </h3>
-        <ol id="list" class="flex flex-col gap-3 text-p p-5">
+        <ol id="list" class="flex flex-col gap-3 text-p pt-5 z-10">
           {
             activities.map((activity) => (
-              <li class="flex items-baseline justify-start text-left opacity-0  ">
+              <li class="flex items-baseline justify-start text-left  ">
                 <span class="mr-3">{activity.emoji}</span>
                 <span>{activity.description}</span>
               </li>
@@ -47,22 +32,3 @@ import { Image } from "astro:assets";
     </div>
   </div>
 </article>
-
-<script>
-  import { animate, inView } from "motion";
-
-  inView(".list-header", (info) => {
-    animate(
-      info.target,
-      { y: [-10, -5, 0], opacity: [0, 0.5, 1] },
-      { duration: 1, easing: "ease-out", endDelay: 0.5 }
-    );
-  });
-  inView("#list li", (info) => {
-    animate(
-      info.target,
-      { opacity: [0, 0.5, 1] },
-      { duration: 1, easing: "ease-out", delay: 0.5, endDelay: 0.5 }
-    );
-  });
-</script>

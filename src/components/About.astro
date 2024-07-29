@@ -1,89 +1,42 @@
 ---
-import heartImages from "@assets/heart.png";
-import cloudImages from "@assets/cloud.png";
-import decoration from "@assets/decoration.png";
 import Technology from "@components/Technology.astro";
-import Activity from "./Activity.astro";
 
-import { Image } from "astro:assets";
+import Activity from "./Activity.astro";
 ---
 
-<section
-  class="overflow-hidden relative bg-zinc-950 rounded-[5rem] m-auto text-balance">
+<section class="flex flex-col overflow-hidden">
   <article
-    class="bg-zinc-950 bg-opacity-5 backdrop-blur-3xl col-span-12 md:col-span-8 flex items-end animate-fade animate-delay-150 overflow-hidden relative section-padding md:px-10 flex-col text-pretty">
+    class="flex animate-fade animate-delay-150 overflow-hidden relative flex-col">
     <div
-      class="flex flex-col items-center justify-center h-full p-5 max-w-5xl m-auto w-full gap-10">
+      class="flex flex-col items-center h-full gap-20 m-auto w-full bg-gradient-to-t to-transparent from-black text-pretty rounded-[5rem]">
       <div
-        class="max-w-5xl m-auto flex flex-col gap-10 animate-jump-in relative">
-        <Image
-          src={decoration}
-          alt="shapes"
-          loading="eager"
-          class="absolute opacity-30 bottom-0 right-0 invert"
-        />
-        <Image
-          src={cloudImages}
-          alt="shapes"
-          loading="eager"
-          class="absolute opacity-10 top-56 md:top-32 left-12"
-        />
-        <p
-          id="intro"
-          class="text-p-info relative md:!leading-[2.5rem] opacity-0">
-          <Image
-            src={heartImages}
-            alt="shapes"
-            loading="eager"
-            class="absolute opacity-20 bottom-12 right-0 invert"
-          />
-          Hello there!👋 I'm a <span class="text-primary">web developer </span>
+        class="m-auto flex flex-col animate-jump-in max-w-5xl p-5 pb-24 gap-10">
+        <h3 id="intro" class="text-p-info relative">
+          I'm a <span class=""> developer </span>
           with a background in <span class="text-primary"
             >Computer Engineering</span
-          >, focused on building robust web applications.
-        </p>
+          >. I create <span class="text-primary"> websites</span> and
+          <span class="text-primary"> mobile applications. </span>
+        </h3>
+
         <p
-          class="border-l-8 text-p italic border-secondary opacity-0 pl-5 max-w-3xl"
+          class="text-p italic !font-normal z-20 border-l-4 border-secondary pl-4"
           id="intro-2">
-          I work with <span
-            class="!font-extrabold decoration-primary text-gradient pr-[2px] md:pr-0">
-            Next.js</span
-          >, <span class="font-extrabold text-gradient pr-[2px] md:pr-0"
+          Mainly, I work with <span class="font-extrabold pr-[2px] md:pr-0"
             >Astro</span
-          >, and the <span class="font-extrabold underline text-gradient"
-            >React.js</span
-          > ecosystem to create engaging digital experiences. I have some experience
-          with <span class="underline text-gradient pr-[2px] md:pr-0 opacity-40"
-            >MongoDB</span
+          > and the <span class="font-extrabold">React.js ecosystem</span> to create
+          engaging digital experiences. I have some experience with <span
+            class="pr-[2px] md:pr-0 font-extrabold">MongoDB</span
           > and
-          <span class="underline text-gradient pr-[2px] md:pr-0 opacity-40"
-            >Firebase</span
-          >, know some <span
-            class="underline text-gradient pr-[2px] md:pr-0 opacity-40"
-            >SQL</span
-          >, and enjoy working with <span
-            class="underline text-gradient pr-[2px] md:pr-0 opacity-40"
+          <span class="pr-[2px] md:pr-0 font-extrabold">Firebase</span>, know
+          some <span class="pr-[2px] md:pr-0 font-extrabold">SQL</span>, and
+          enjoy working with <span class="pr-[2px] md:pr-0 font-extrabold"
             >headless CMS</span
           >.
         </p>
         <Technology />
       </div>
     </div>
+    <Activity />
   </article>
-  <Activity />
 </section>
-
-<script>
-  import { animate, inView, stagger } from "motion";
-
-  inView("#intro", (info) => {
-    animate(info.target, { opacity: [0, 0.5, 1] }, { duration: 1 });
-  });
-  inView("#intro-2", (info) => {
-    animate(
-      info.target,
-      { opacity: [0, 1] },
-      { duration: 1, delay: stagger(0.1) }
-    );
-  });
-</script>
