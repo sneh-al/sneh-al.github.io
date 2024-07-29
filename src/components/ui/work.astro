@@ -18,9 +18,9 @@ const { title, tags, info, url, image, isLink, link, heroname } = Astro.props;
 
 <article
   id=""
-  class="rounded-3xl project shadow-sm max-w-6xl m-auto w-full md:aspect-video flex items-center justify-center relative flex-1 overflow-hidden border-b-4 border-r-4 border-b-transparent border-r-transparent transition-all duration-500">
+  class="sticky top-44 rounded-3xl project shadow-sm max-w-6xl m-auto w-full md:aspect-video flex items-center justify-center flex-1 overflow-hidden border-b-4 border-r-4 border-b-transparent border-r-transparent transition-all duration-500">
   <div
-    class="w-full border-[1px] rounded-3xl border-accent flex flex-col justify-center gap-5 p-10 info z-10 bg-zinc-950/70 ov backdrop-blur h-full relative">
+    class="w-full border-[1px] rounded-3xl border-accent flex flex-col justify-center gap-5 p-10 info z-10 bg-black/70 ov backdrop-blur h-full relative">
     <h1 class="font-extrabold text-primary text-2xl md:text-4xl w-fit">
       {title}
     </h1>
@@ -34,10 +34,10 @@ const { title, tags, info, url, image, isLink, link, heroname } = Astro.props;
       }
     </p>
     <p class="md:text-xl text-secondary">{info}</p>
-    <div class="flex items-center gap-3 text-highlight flex-wrap">
+    <div class="flex items-center gap-5 text-highlight flex-wrap">
       <a
         href={url}
-        class="flex items-center gap-3 w-fit font-semibold"
+        class="flex items-center gap-2 w-fit font-semibold"
         target="_blank"
         rel="noopener noreferrer">
         Take a Look <External />{" "}
@@ -46,18 +46,18 @@ const { title, tags, info, url, image, isLink, link, heroname } = Astro.props;
         isLink && (
           <>
             <a
-              href={`/stuff/${title}`}
-              class="flex items-center justify-center gap-3  font-semibold  "
+              href={link}
+              class="flex items-center justify-center gap-2  font-semibold  "
               target="_blank"
               rel="noopener noreferrer">
               Github
               <External />
             </a>
-            <a
+            {/* <a
               href={link}
               class="flex items-center gap-3 w-fit font-semibold md:ml-auto underline underline-offset-2   ">
               Learn More
-            </a>
+            </a> */}
           </>
         )
       }
@@ -75,7 +75,6 @@ const { title, tags, info, url, image, isLink, link, heroname } = Astro.props;
   @media (prefers-reduced-motion: no-preference) {
     @supports (animation-timeline: scroll()) {
       .project {
-        transform: scale(1);
         animation: scale-a-lil linear both;
         animation-duration: 300ms;
         animation-timeline: view();
@@ -86,7 +85,7 @@ const { title, tags, info, url, image, isLink, link, heroname } = Astro.props;
 
   @keyframes scale-a-lil {
     from {
-      transform: scale(0.9);
+      transform: scale(0.8);
     }
   }
 </style>

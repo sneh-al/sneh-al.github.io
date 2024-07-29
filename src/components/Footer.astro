@@ -6,24 +6,28 @@ import flashImages from "@assets/flash.png";
 import { socialLinks } from "@consts";
 ---
 
-<footer class="bg-black flex flex-col">
-  <article class="m-auto flex flex-col gap-6 max-w-5xl p-5 section-p md:px-10">
-    <div class="text-p-info w-full flex-col gap-5 flex text-balance">
-      <p>
+<footer class="flex flex-col relative bg-black">
+  <div
+    class="absolute inset-0 h-full w-full bg-black opacity-5 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))]">
+  </div>
+  <article
+    class="m-auto flex flex-col gap-6 max-w-5xl p-5 section-padding md:px-10">
+    <div class="text-p-info w-full flex-col gap-5 flex text-balance" id="text">
+      <h6 class="">
         Feel free to contact me for <span class="text-primary"
           >collaborations</span
-        >,<span class="text-primary"> projects</span>, <span
+        >,<span class="text-primary"> projects</span>, or just to <span
           class="text-primary">
-          jobs</span
-        >, or just to <span class="text-primary"> say hi</span>.
-      </p>
-      <p class="text-secondary">Let's make something amazing together!</p>
+          say hi</span
+        >.
+      </h6>
+      <h6 class="text-secondary">Let's make something amazing together!</h6>
     </div>
 
-    <ol class="flex items-start text-highlight py-5">
+    <ul class="flex items-start text-highlight relative" , id="social-link">
       {
         socialLinks.map((link) => (
-          <li class=" animate-rotate-x animate-delay-100 ">
+          <li class="  ">
             <span class="sr-only">link for {link.friendlyName}</span>
             <a
               href={link.link}
@@ -33,7 +37,7 @@ import { socialLinks } from "@consts";
               <Image
                 src={link.icon}
                 loading="eager"
-                class="w-8 md:w-16 object-contain group-hover:-translate-y-3 transition-all duration-300 ease-linear md:brightness-0 md:invert   group-hover:brightness-100 group-hover:invert-0  "
+                class="w-8 md:w-16 object-contain group-hover:-translate-y-2 transition-all duration-300 ease-linear md:brightness-0 md:invert   group-hover:brightness-100 group-hover:invert-0"
                 alt={link.link}
               />
               <p class="hidden md:block group-hover:underline underline-offset-4 capitalize">
@@ -43,11 +47,11 @@ import { socialLinks } from "@consts";
           </li>
         ))
       }
-    </ol>
+    </ul>
   </article>
 
   <article
-    class="flex mt-auto flex-col flex-wrap items-center justify-center bg-secondary text-black p-5">
+    class="flex mt-auto flex-col flex-wrap items-center justify-center bg-secondary text-black p-5 z-10">
     <div class="flex items-center gap-6">
       <Image src={messImages} alt="shapes" class="w-12 hue-rotate-180" />
       <Image src={heartImages} alt="shapes" class="w-12 hue-rotate-180" />

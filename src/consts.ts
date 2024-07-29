@@ -13,8 +13,9 @@ import appwriteLogo from "./assets/svg/appwrite.svg";
 import mongodbLogo from "./assets/svg/mongodb.svg";
 
 // project images
-import vidya from "./assets/projects/vidya.png";
 import warli from "./assets/projects/warli.png";
+import purr from "./assets/projects/purrpix.png";
+import damien from "./assets/projects/damien.png";
 
 type Config = {
   title: string;
@@ -70,12 +71,15 @@ export const NAV_LINKS: Array<{ title: string; path: string }> = [
 export const activities = [
   {
     emoji: "🍿",
-    description:
-      "Embarking on thrilling adventures in the realms of anime, movie/tv",
+    description: "Embarking on thrilling adventures in the realms of anime",
+  },
+  {
+    emoji: "🎬",
+    description: "Catching a great movie or TV show",
   },
   { emoji: "🕰️", description: "Time-traveling through history." },
   { emoji: "📱", description: "Staying up-to-date with the technology." },
-  { emoji: "🥾", description: "Enjoying hiking" },
+  { emoji: "🥾", description: "hitting the trails for a good hike" },
   // { emoji: "🌄", description: "Wandering to new places." },
 ];
 
@@ -141,7 +145,7 @@ export const experience = [
     company: "Sravadhi Solution Pvt Ltd, Surat",
     role: "Reactjs Developer",
     description:
-      "Completed a 3-month internship and transitioned into a role as a developer. Worked on projects involving Electron.js and React.js, honing skills in cross-platform application development and creating interactive user interfaces. Expanded expertise in frameworks and enhanced proficiency in robust web application development.",
+      "Completed a 3-month internship and transitioned into a role as a developer. There i worked on projects involving Electron.js and React.js, honing skills in cross-platform application development and creating interactive user interfaces.",
     icon: workIcon,
     type: "work",
   },
@@ -175,13 +179,31 @@ export const works = [
     image: warli,
     heroname: "warli",
   },
-  {
-    title: "Vidhaykunj English and Gujrati medium school",
-    tags: ["Astrojs", "Firebase hosting"],
-    url: "https://shrividhyakunjprimarysch-1fd54.web.app/",
-    info: "Static website for School",
 
-    image: vidya,
-    heroname: "vidya",
+  {
+    title: "Purrpix",
+    tags: [
+      "Reactjs",
+      "Firebase hosting",
+      "tailwindcss",
+      "redux",
+      "react-redux",
+    ],
+    url: "https://purrpix-sneh-al.web.app/",
+    info: "Cat Image gallary using the catapi and firebase hosting.",
+    isLink: true,
+    link: "https://github.com/sneh-al/Cat-Generator",
+    image: purr,
+    heroname: "purr",
+  },
+  {
+    title: "Photographer website from figma",
+    tags: ["Astrojs", "Reactjs", "netlify", "tailwindcss", "daisyui"],
+    url: "https://damien.netlify.app/",
+    info: "Phtographer website from figma design by @Praha ",
+    isLink: true,
+    link: "https://github.com/sneh-al/photographer-from-figma",
+    image: damien,
+    heroname: "damien",
   },
 ];

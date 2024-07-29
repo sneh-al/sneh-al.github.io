@@ -1,17 +1,34 @@
 ---
-import Article from "./ui/Article.astro";
 import { activities } from "@consts";
+import HeartImage from "@assets/heart.png";
+import { Image } from "astro:assets";
 ---
 
-<Article title="A Peek into My Activities" sectionClass="   ">
-  <ol class="flex flex-col gap-3 text-p animate-fade-up bg-black p-5">
-    {
-      activities.map((activity) => (
-        <li class="flex items-baseline justify-start text-left ">
-          <span>{activity.emoji}</span>
-          <span>{activity.description}</span>
-        </li>
-      ))
-    }
-  </ol>
-</Article>
+<article
+  class="section-padding rounded-[5rem] w-full relative overflow-hidden bg-black border-highlight/10 border z-10">
+  <div class="md:!leading-[2.5rem] m-auto max-w-5xl">
+    <div class="relative">
+      <div class="p-5">
+        <h3 class="text-secondary text-p-info relative flex gap-5 w-fit">
+          <span>Other Activities I Enjoy</span>
+          <Image
+            src={HeartImage}
+            alt="shapes"
+            loading="eager"
+            class="absolute opacity-20 -top-16 right-0 invert"
+          />
+        </h3>
+        <ol id="list" class="flex flex-col gap-3 text-p pt-5 z-10">
+          {
+            activities.map((activity) => (
+              <li class="flex items-baseline justify-start text-left  ">
+                <span class="mr-3">{activity.emoji}</span>
+                <span>{activity.description}</span>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </div>
+  </div>
+</article>

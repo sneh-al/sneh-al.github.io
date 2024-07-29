@@ -3,15 +3,16 @@ import { works } from "@consts";
 import Work from "./ui/work.astro";
 ---
 
-<section class="flex flex-col relative">
-  <header class="top-0 bg-black p-5 py-24">
-    <h1 class="text-p-info p-5 text-center max-w-5xl m-auto !text-secondary">
+<section class="flex flex-col">
+  <header
+    class="rounded-b-[5rem] p-5 bg-gradient-to-b from-black to-transparent z-10">
+    <h1
+      class="font-bold text-3xl lg:text-5xl head p-5 text-center py-24 container m-auto !text-secondary max-w-5xl">
       This is some of stuff I've been building with code. Take a peek and see
       what I've been up to.
     </h1>
   </header>
-  <main
-    class="bg-black bg-dot z-10 w-full m-auto py-32 flex flex-col gap-6 p-5">
+  <main class="z-10 w-full flex flex-col gap-6 p-5 relative section-padding">
     {
       works.map((work) => (
         <Work
@@ -20,27 +21,56 @@ import Work from "./ui/work.astro";
           image={work.image}
           info={work.info}
           tags={work.tags}
+          isLink={work.isLink}
+          link={work.link}
         />
       ))
     }
   </main>
-</section>
+  <article
+    class="section-padding rounded-[5rem] w-full relative overflow-hidden bg-black border-highlight/10 border z-10">
+    <div class="m-auto max-w-5xl flex flex-col gap-10 text-pretty p-5">
+      <h3 class="text-p-info">
+        Check out other projects I worked on while learning and experimenting!
+      </h3>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/sneh-al/"
+        class="p-5 border border-highlight text-highlight hover:bg-highlight hover:text-zinc-950 hover:border-zinc-950 md:text-xl rounded-[5rem] flex items-center justify-between transition-all ease-in-out duration-500 font-semibold animate-rotate-x animate-delay-100"
+        >Github
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-8 h-8">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+        </svg>
+      </a>
+    </div>
+  </article>
 
-<style>
-  @media (prefers-reduced-motion: no-preference) {
-    @supports (animation-timeline: scroll()) {
-      h1 {
-        animation: scale-down linear both;
-        animation-duration: 300ms;
-        animation-timeline: scroll();
-        animation-range: exit -50px;
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      @supports (animation-timeline: scroll()) {
+        .head {
+          animation: scale-down linear both;
+          animation-duration: 3ms;
+          animation-timeline: scroll();
+          animation-range: exit -400px;
+        }
       }
     }
-  }
 
-  @keyframes scale-down {
-    to {
-      transform: scale(0.1);
+    @keyframes scale-down {
+      to {
+        transform: scale(0.1);
+      }
     }
-  }
-</style>
+  </style>
+</section>

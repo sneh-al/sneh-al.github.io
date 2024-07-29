@@ -1,10 +1,7 @@
 ---
 import Page from "@layouts/pageLayout.astro";
 import Hero from "@components/Hero.astro";
-import Timeline from "@components/Timeline.astro";
 import About from "@components/About.astro";
-
-import ChevronRight from "@components/ChevronRight.astro";
 
 const metadata = {
   title: "Snehal",
@@ -14,23 +11,4 @@ const metadata = {
 <Page metadata={metadata}>
   <Hero />
   <About />
-
-  <Timeline />
-  <section class="overflow-hidden bg-zinc-950 backdrop-blur section-p">
-    <article class="py-14 md:px-10 p-5">
-      <div class="max-w-5xl m-auto flex flex-col gap-10 animate-jump-in">
-        <p class="text-p-info">
-          I'm passionate about making a positive impact through my work. I
-          believe that every work is an opportunity for personal growth and
-          learning.
-        </p>
-        <a
-          href="/stuff"
-          class="p-5 md:p-8 border border-highlight text-highlight hover:bg-highlight hover:text-zinc-950 hover:border-zinc-950 md:text-xl rounded-[5rem] flex items-center justify-between transition-all ease-in-out duration-500 font-semibold animate-rotate-x animate-delay-100"
-          >Check out my work
-          <ChevronRight />
-        </a>
-      </div>
-    </article>
-  </section>
 </Page>

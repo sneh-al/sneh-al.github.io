@@ -1,6 +1,7 @@
 ---
 import "@fontsource/space-mono";
 import "@fontsource/monoton";
+import "@fontsource-variable/lexend-deca";
 import { ViewTransitions } from "astro:transitions";
 import Seo from "../components/SEOHead.astro";
 type Props = {
@@ -20,44 +21,55 @@ const { content } = Astro.props;
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
-    <Seo title={content.title} />
     <ViewTransitions />
+    <Seo title={content.title} />
     <title>{content.title}</title>
   </head>
-  <body class="" id="app">
+  <body class="relative" id="app">
+    <div
+      class="absolute inset-0 h-full w-full bg-black/90 opacity-5 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:70px_70px] md:bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] -z-0">
+    </div>
     <slot />
     <style is:global>
       body {
-        @apply bg-dot bg-black text-accent/80;
-        scroll-behavior: smooth;
-
+        @apply snap-y overflow-x-hidden bg-black text-accent;
         font-family: "Space Mono", monospace;
       }
       .bg-dot {
         background-image: radial-gradient(
-          circle at 1px 1px,
-          rgba(255, 255, 255, 0.1) 1px,
-          transparent 0
-        );
-        background-size: 50px 30px;
-        background-attachment: fixed;
+            rgba(255, 255, 255, 0.1) 1px,
+            transparent 0
+          ),
+          radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 0);
+        background-position:
+          0 0,
+          25px 25px;
+
+        background-size: 50px 50px;
       }
 
       .text-p {
-        @apply text-xl font-semibold md:text-2xl;
+        @apply max-w-prose text-xl md:text-2xl;
       }
       .text-p-info {
-        @apply text-2xl font-bold md:text-3xl lg:text-4xl;
+        @apply max-w-prose text-2xl md:text-3xl lg:text-4xl;
       }
       .yo {
         font-family: "Monoton", system-ui;
       }
-      .section-p {
-        @apply py-32;
+
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Lexend Deca Variable", sans-serif;
+        @apply md:!leading-[2.5rem];
       }
-      a {
-        @apply text-nowrap rounded-[5rem] px-5 py-3 outline-accent transition-all duration-300 ease-linear hover:!outline;
+      .section-padding {
+        @apply py-24 md:py-32;
       }
+
       @keyframes slide {
         from {
           background-position: 0% 0%;
@@ -65,6 +77,14 @@ const { content } = Astro.props;
         to {
           background-position: 100% 100%;
         }
+      }
+
+      .text-gradient {
+        @apply bg-gradient-to-tr from-secondary via-primary to-highlight bg-clip-text !font-semibold text-transparent;
+      }
+
+      section {
+        scroll-snap-align: start;
       }
     </style>
   </body>

@@ -1,21 +1,20 @@
 ---
 import { Image } from "astro:assets";
+
 type Props = {
-  icon: string | any;
   name: string;
   isScondary: boolean;
+  icon: any;
 };
 
-const { icon, name, isScondary } = Astro.props;
+const { name, isScondary, icon } = Astro.props;
 ---
 
-<div
-  class="h-full flex transition-all flex-col duration-300 ease-out aspect-video bg-accent/10 rounded-[5rem] p-5 max-w-36 md:max-w-44 overflow-hidden text-center">
-  <Image
-    src={icon}
-    loading="eager"
-    class={` m-auto w-full max-w-34  ${isScondary && "opacity-30"}`}
-    alt={name}
-  />
-  <p class="text-nowrap text-base">{name}</p>
-</div>
+<li
+  class={`flex  transition-all flex-col items-center justify-center duration-300 ease-out   max-w-24 md:max-w-28  lg:max-w-36  p-3 bg-accent/5   rounded-[5rem]    ${isScondary && " opacity-60"}`}>
+  <abbr title={name}>
+    <Image src={icon} alt={name} width={148} height={148} />
+  </abbr>
+
+  <p class="sr-only">{name}</p>
+</li>
