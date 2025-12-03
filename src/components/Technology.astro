@@ -5,7 +5,7 @@ import { Image } from "astro:assets";
 import messImages from "@assets/mess.png";
 ---
 
-<div class="">
+<div class="flex flex-col gap-5">
   <h3
     class="text-secondary text-balance text-p-info list-header flex items-center relative w-fit">
     <Image
@@ -17,7 +17,7 @@ import messImages from "@assets/mess.png";
     <span> Recently Worked With </span>
   </h3>
   <ul
-    class="flex flex-wrap gap-3 max-w-sm md:max-w-md lg:max-w-lg justify-center pt-5"
+    class="flex flex-wrap max-w-sm md:max-w-lg lg:max-w-xl gap-2 justify-center md:gap-3 lg:gap-4"
     id="tech-list">
     {
       skills.mainFocus.map((skill) => (

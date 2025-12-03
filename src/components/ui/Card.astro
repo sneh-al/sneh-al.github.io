@@ -11,9 +11,9 @@ const { name, isScondary, icon } = Astro.props;
 ---
 
 <li
-  class={`flex  transition-all flex-col items-center justify-center duration-300 ease-out   max-w-24 md:max-w-28  lg:max-w-36  p-3 bg-accent/5   rounded-[5rem]    ${isScondary && " opacity-60"}`}>
+  class={` w-fit gird content-center max-w-28  md:max-w-32 lg:max-w-44 px-5 py-2 duration-300 ease-out      bg-accent/5   rounded-[5rem]    ${isScondary && " opacity-60"}`}>
   <abbr title={name}>
-    <Image src={icon} alt={name} width={148} height={148} />
+    <Image src={icon} class="" alt={name} />
   </abbr>
 
   <p class="sr-only">{name}</p>

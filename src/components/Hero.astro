@@ -8,9 +8,9 @@ import heartImages from "@assets/heart.png";
 ---
 
 <section
-  class="md:py-24 pb-24 relative bg-gradient-to-b from-black via-black/50 to-transparent">
+  class="section-padding relative bg-gradient-to-b from-black via-black/50 to-transparent">
   <article
-    class="flex flex-col justify-center gap-10 items-center m-auto max-w-5xl p-5">
+    class="flex flex-col justify-center gap-10 md:gap-16 items-center m-auto max-w-5xl p-5">
     <div
       class="w-full animate-fade-up rounded-[5rem] overflow-hidden bg-black shadow-highlight/10 shadow">
       <h1
@@ -124,8 +124,8 @@ import heartImages from "@assets/heart.png";
   </article>
 </section>
 <script>
-  const btn = document.getElementById("speak");
-  const wave = document.getElementById("wave");
+  const btn = document.getElementById("speak") as HTMLButtonElement;
+  const wave = document.getElementById("wave") as HTMLSpanElement;
   const spans = document.querySelectorAll("#greetings span:nth-child(n+2)");
 
   const synth = window.speechSynthesis;
@@ -134,11 +134,11 @@ import heartImages from "@assets/heart.png";
     synth.speak(utterThis);
   }
 
-  btn?.addEventListener("click", makeSpeak);
+  btn.addEventListener("click", makeSpeak);
   let currentIndex = 0;
 
   function toggleSpan() {
-    wave?.classList.toggle("hidden");
+    wave.classList.toggle("hidden");
     spans[currentIndex].classList.add("hidden");
     currentIndex = (currentIndex + 1) % spans.length;
     spans[currentIndex].classList.remove("hidden");

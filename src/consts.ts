@@ -16,6 +16,7 @@ import mongodbLogo from "./assets/svg/mongodb.svg";
 import warli from "./assets/projects/warli.png";
 import purr from "./assets/projects/purrpix.png";
 import damien from "./assets/projects/damien.png";
+import annaqsh from "./assets/projects/annaqsh.png";
 
 type Config = {
   title: string;
@@ -172,10 +173,18 @@ export const education = [
 
 export const works = [
   {
-    title: "Warli generate",
+    title: "Annaqsh Design",
+    tags: ["Wix"],
+    url: "https://www.annaqshdesign.ae/",
+    info: "A Dubai based interior design studio that brings stylish, luxury spaces to life, while also offering custom and ready-made furniture to fit every home.",
+    image: annaqsh,
+    heroname: "annaqsh",
+  },
+  {
+    title: "Warli Magic",
     tags: ["React", "tailwind csss", "nextjs"],
     url: "https://warlimagic.vercel.app/",
-    info: "Experience the magic of AI as you craft your own Warli paintings.",
+    info: "A social-media style web app for sharing Warli art: users can upload, view and explore Warli-style paintings, and browse a gallery of creative pieces.",
     image: warli,
     heroname: "warli",
   },
@@ -190,17 +199,17 @@ export const works = [
       "react-redux",
     ],
     url: "https://purrpix-sneh-al.web.app/",
-    info: "Cat Image gallary using the catapi and firebase hosting.",
+    info: "A fun cat-image gallery powered by The Cat API, built as a small playful project and hosted on Firebase for fast and simple delivery.",
     isLink: true,
     link: "https://github.com/sneh-al/Cat-Generator",
     image: purr,
     heroname: "purr",
   },
   {
-    title: "Photographer website from figma",
+    title: "Photographer website ",
     tags: ["Astrojs", "Reactjs", "netlify", "tailwindcss", "daisyui"],
     url: "https://damien.netlify.app/",
-    info: "Phtographer website from figma design by @Praha ",
+    info: "Phtographer website from figma design by @Praha. A simple, responsive website built using Astrojs and Reactjs, styled with Tailwind CSS and DaisyUI.",
     isLink: true,
     link: "https://github.com/sneh-al/photographer-from-figma",
     image: damien,
